@@ -1,0 +1,146 @@
+/*font-family: 'Amatic SC', cursive;
+font-family: 'Roboto Slab', serif;*/
+body {
+	background-color: #000;
+	overflow-x: hidden;
+}
+
+/* ********** Начало CONTAINER ********** */
+
+@media (max-width: 575px){
+	.container {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+@media (min-width: 576px){
+	.container {
+		max-width: 570px;
+	}
+}
+@media (min-width: 768px){
+	.container {
+		max-width: 750px;
+	}
+}
+@media (min-width: 992px){
+	.container {
+		max-width: 990px;
+	}
+}
+@media (min-width: 1200px){
+	.container {
+		max-width: 1120px;
+	}
+}
+.container {  
+	margin: auto;
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* ********** Конец CONTAINER ********** */
+
+/* ********** Начало HEADER ********** */
+.header {
+
+}
+.header-top-wrapper	{
+	background-color: #fff;
+}
+.header-top-flexbox {
+	display: flex;
+	justify-content: space-between;
+	max-height: 100px;
+}
+.header-top-logo-wrapper {
+	max-width: 100px;
+}
+.header-top-logo {
+	height: 100%; 
+	box-sizing: border-box;
+	padding-top: 6px;
+	padding-bottom: 20px;
+}
+.header-nav-wrapper {
+
+}
+.header-nav-list {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+.header-nav-item {
+	list-style: none;
+}
+.header-nav-item:not(:last-child) {
+	margin-right: 42px;
+}
+.header-nav-item-link {
+	position: relative;
+	height: 100%;
+	padding-left: 5px;
+	padding-right: 5px;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: Amatic SC;
+	font-weight: bold;
+	font-size: 28px;
+	color: #3C3973;
+}
+.header-nav-item-link-text {
+	
+}
+.header-nav-link-text:after {
+	content: '';
+	display: block;
+	width: 0;
+	height: 2px;
+	background-color: #3C3973;
+	transition: width 0.3s;
+}
+.header-nav-item:hover .header-nav-link-text:after {
+	width: 100%;
+}
+.header-top-icons-list {
+	display: flex;
+	align-items: center;
+}
+
+.header-top-icons-item:not(:last-child) {
+	margin-right: 8px;
+}
+.header-bottom {
+	background-image: url('../image/elements/bg-noise-pattern.png');
+	position: relative;
+	min-height: 325px;
+	overflow: hidden;
+}
+.header-bottom-logo {
+
+}
+.header-bottom-pictures-wrapper {
+
+}
+.header-bottom-picture:first-child {
+	position: absolute;
+	left: 35%;
+	top: -25px;
+}
+.header-bottom-picture:last-child {
+	position: absolute;
+	left: 40%;
+	top: 90%;
+	transform: translateY(-100%);
+}
+.header-bottom-foto {
+	position: absolute;
+	bottom: 0;
+	right: -50px;
+
+}
+/* ********** Конец HEADER ********** */
