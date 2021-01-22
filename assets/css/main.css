@@ -33,7 +33,7 @@ p:not(:last-child) {
 }
 @media (min-width: 1200px){
 	.container {
-		max-width: 1150px;
+		max-width: 1170px;
 	}
 }
 .container {  
@@ -287,27 +287,26 @@ p:not(:last-child) {
 
 /* ********** Начало ФОТОГРАФИЙ ********** */
 .foto-section-wrapper {
-
+	position: relative;
 }
 .foto-tab-list {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 88px;
+	height: 82px;
+	margin-bottom: 46px;
+	margin-left: auto;
+	margin-right: auto;
 }
 .foto-tab-item {
-
-}
-.foto-slider-item {
-	display: flex;
+	outline: none;
 }
 .foto-slider-item-wrapper {
 	outline: none;
 }
 .foto-slider-item {
-	/*flex-basis: 50%;*/
+	display: flex;
+	padding: 0px 10px;
 }
 .foto-slider-content {
-
+	width: 50%;
 }
 .foto-slide-title {
 	font-family: Roboto Slab;
@@ -320,18 +319,82 @@ p:not(:last-child) {
 	font-weight: normal;
 	font-size: 16px;
 }
+.foto-slider-foto {
+	width: 50%;
+}
 .foto-slider-foto img {
-	display: block;
+	width: 100%;
+}
+.foto-slider-button {
+	font-family: Amatic SC;
+	font-weight: bold;
+	font-size: 28px;
+	color: #fff;
+	text-decoration: none;
+	padding: 4px 29px;
+	border-radius: 5px;
+	background-color: #3C3973;
+	display: inline-block;
+	margin-top: 40px;
+}
+.slick-prev-a {
+	border-radius: 0 0 10px 10px;
+	position: absolute;
+	border: none;
+	outline: none;
+	left: -100px;
+	top: 0;
+	width: 81px;
+	height: 42px;
+	background-color: #C5DA9A;
+}
+.slick-next-a {
+	border-radius: 0 0 10px 10px;
+	position: absolute;
+	border: none;
+	outline: none;
+	right: -100px;
+	top: 0;
+	width: 81px;
+	height: 42px;
+	background-color: #C5DA9A;
 }
 .foto-slider-list .slick-dots {
 	display: none!important;
 }
-
+.foto-tab-list .slick-list {
+	overflow-x: hidden;
+	overflow-y: visible!important;
+	height: 100%;
+}
+@media (max-width: 1200px){
+	.foto-tab-list {
+		max-width: calc(100% - 181px);
+	}
+}
+@media (max-width: 768px){
+	.foto-tab-list {
+		margin-bottom: 0;
+	}
+	.foto-slider-item {
+		flex-direction: column;
+	}
+	.foto-slider-foto {
+		width: 100%;
+	}
+	.foto-slider-content {
+		width: 100%;
+	}
+	.foto-slider-item-wrapper {
+		text-align: center;
+	}
+}
 /* Анимация вкладок */
 .foto-tab-item > .shapes-item {
 	align-self: center;
+	margin: 0 auto;
 	background-color: #C5DA9A;
-	border-radius: 0 0 10px 10px ;
+	border-radius: 0 0 10px 10px;
 	cursor: pointer;
 	display: flex;
 	flex-direction: column;
