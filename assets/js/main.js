@@ -23,7 +23,8 @@ $('.foto-slider-list').slick({
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			draggable: false,
-			swipe: false
+			swipe: false,
+			adaptiveHeight: true
 		});
 
 const fotoSlider = $('.foto-tab-list').slick({
@@ -71,7 +72,6 @@ const fotoSlider = $('.foto-tab-list').slick({
 						slidesToScroll: 1,
 					}
 				}
-
 			]
 		});
 
@@ -100,28 +100,54 @@ fotoSlider.on('afterChange', () => {
 	}
 })
 
+//Инициализация слайдера историй
 
-// document.querySelector('.slick-next-a').addEventListener('click', () => {
-// 	console.log(document.documentElement.clientWidth)
-// 	if (document.documentElement.clientWidth <= 390) {
-// 		let currentSlide = fotoSlider.slick('slickCurrentSlide')
-// 		console.log(currentSlide)
-// 		dotsFalse[activeSlide].classList.toggle('tab-active')
-// 		dotsFalse[currentSlide].classList.toggle('tab-active')
-// 		activeSlide = currentSlide
-// 		dotsTrue[currentSlide].dispatchEvent(event)
-// 	}
-// })
+$('.section-card-list').slick({
+			dots: false,
+			infinite: false,
+			arrows: true,
+			draggable: false,
+			swipe: false,
+			appendArrows: $('.section-head-wrapper'),
+			prevArrow: '<button type = "button" class = "section-slider-prev"><img src="assets/image/icons/prev.png"></button>',
+	 		nextArrow: '<button type = "button" class = "section-slider-next"><img src="assets/image/icons/next.png"></button>',
+			speed: 300,
+			slidesToShow: 3,
+			slidesToScroll: 3,	
+			responsive: [
+				{
+					breakpoint: 1200,
+					arrows: true,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1,
+					}
+				},
+				{
+					breakpoint: 768,
+					arrows: true,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+					}
+				}
+			]
+		});
 
-// document.querySelector('.slick-prev-a').addEventListener('click', () => {
-// 	if (document.documentElement.clientWidth <= 390) {
-// 		let currentSlide = fotoSlider.slick('slickCurrentSlide')
-// 		console.log(currentSlide)
-// 		dotsFalse[activeSlide].classList.toggle('tab-active')
-// 		dotsFalse[currentSlide].classList.toggle('tab-active')
-// 		activeSlide = currentSlide
-// 		dotsTrue[currentSlide].dispatchEvent(event)
-// 	}
-// })
+const fotoCardAll = document.querySelectorAll('#story-list .section-card-item')
+let fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map((line) => line.clientHeight))))
 
 
+fotoCardAll.forEach((item) => {
+	item.style.height = fotoCardMaxHeight + 'px'
+})
+
+$(window).resize(() => {
+	fotoCardAll.forEach((item) => {
+		item.style.height = 100 + '%'
+	})
+	fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map((line) => line.clientHeight))))
+	fotoCardAll.forEach((item) => {
+		item.style.height = fotoCardMaxHeight + 'px'
+	})
+}) 

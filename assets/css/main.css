@@ -7,15 +7,45 @@ html, body {
 p:not(:last-child) {
 	margin-bottom: 40px;
 }
+a {
+	text-decoration: none;
+}
+
+.bg-noise {
+	background-image: url('../image/elements/bg-noise-pattern.png');
+}
+.section {
+	padding-top: 45px;
+	padding-bottom: 45px;
+}
+.button {
+	font-family: Amatic SC;
+	font-weight: bold;
+	font-size: 28px;
+	color: #fff;
+	text-decoration: none;
+	padding: 4px 29px;
+	border-radius: 5px;
+	background-color: #3C3973;
+	display: inline-block;
+}
+.text-center {
+	text-align: center;
+}
+.md-show {
+	display: none;
+}
+@media (max-width: 768px){
+	.md-hide {
+		display: none;
+	}
+	.md-show {
+		display: inline-block;
+	}
+}
 
 /* ********** Начало CONTAINER ********** */
 
-@media (max-width: 575px){
-	.container {
-		padding-left: 5px;
-		padding-right: 5px;
-	}
-}
 @media (min-width: 576px){
 	.container {
 		max-width: 570px;
@@ -117,7 +147,6 @@ p:not(:last-child) {
 	margin-right: 8px;
 }
 .header-bottom {
-	background-image: url('../image/elements/bg-noise-pattern.png');
 	position: relative;
 	min-height: 325px;
 	overflow: hidden;
@@ -312,12 +341,14 @@ p:not(:last-child) {
 	font-family: Roboto Slab;
 	font-weight: bold;
 	font-size: 16px;
+	line-height: 28px;
 	color: #3C3973;
 }
 .foto-slide-text {
 	font-family: Roboto Slab;
 	font-weight: normal;
 	font-size: 16px;
+	line-height: 28px;
 }
 .foto-slider-foto {
 	width: 50%;
@@ -326,15 +357,6 @@ p:not(:last-child) {
 	width: 100%;
 }
 .foto-slider-button {
-	font-family: Amatic SC;
-	font-weight: bold;
-	font-size: 28px;
-	color: #fff;
-	text-decoration: none;
-	padding: 4px 29px;
-	border-radius: 5px;
-	background-color: #3C3973;
-	display: inline-block;
 	margin-top: 40px;
 }
 .slick-prev-a {
@@ -358,6 +380,9 @@ p:not(:last-child) {
 	width: 81px;
 	height: 42px;
 	background-color: #C5DA9A;
+}
+.foto-section-wrapper .slick-disabled {
+	opacity: .3;
 }
 .foto-slider-list .slick-dots {
 	display: none!important;
@@ -389,6 +414,12 @@ p:not(:last-child) {
 		text-align: center;
 	}
 }
+@media (max-width: 375px){
+	.foto-tab-list {
+		max-width: calc(90% - 181px);
+	}
+}
+
 /* Анимация вкладок */
 .foto-tab-item > .shapes-item {
 	align-self: center;
@@ -408,6 +439,7 @@ p:not(:last-child) {
 .shapes-item__text {
 	display: block;
 	position: absolute;
+	top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -474,3 +506,126 @@ p:not(:last-child) {
 	color: #fff;
 }
 /* ********** Конец ФОТОГРАФИЙ ********** */
+
+/* ********** Начало Личные истории и контекста********** */
+.section-head-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.section-title {
+	margin: 0;
+	display: inline-block;
+	font-family: Amatic SC;
+	font-weight: bold;
+	font-size: 58px;
+	text-transform: uppercase;
+	color: #3C3973;
+}
+.section-card-list {
+	overflow: hidden;
+	padding-top: 31px;
+}
+.section-card-list .slick-list {
+	overflow: visible;
+}
+.section-card-item-wrapper {
+	padding-left: 5px;
+	padding-right: 5px;
+	transition: transform .3s;
+}
+.section-card-item-wrapper:hover {
+	transform: translateY(-15px);
+}
+.section-card-item{
+	outline: none;
+	display: block;
+	margin: 0 auto;
+	max-width: 352px;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+	border-radius: 5px;
+	overflow: hidden;
+}
+.section-card-item-image-wrapper { 
+	position: relative;
+}
+.section-card-item-image-wrapper img { 
+	display: block;
+}
+.section-card-item-category {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 2px 32px 5px;
+	font-family: Roboto Slab;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+	border-radius: 5px 0px;
+}
+.green-category {
+	background-color: #C5DA9A;
+	color: #748552;
+}
+.orange-category {
+	background-color: #FDB137;
+	color: #fff;
+}
+.blue-category {
+	background-color: #3C3973;
+	color: #fff;
+}
+.section-card-item-text {
+	background-color: #fff;
+	height: 100%;
+	max-width: 352px;
+	padding: 21px 32px;
+	box-sizing: border-box;
+}
+.section-card-item-date {
+	font-family: Roboto Slab;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+	color: #8D8D8D;
+	margin-bottom: 13px;
+}
+.section-card-item-title {
+	font-family: Roboto Slab;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 28px;
+	color: #3C3973;
+}
+.section-slider-prev,
+.section-slider-next {
+	outline: none;
+	position: relative;
+	border: none;
+	background-color: #C5DA9A;
+	width: 32px;
+	height: 32px;
+	border-radius: 50px;
+}
+.section-slider-prev img,
+.section-slider-next img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.section-head-wrapper .slick-disabled {
+	opacity: 0.5;
+}
+.section-button-wrapper {
+	padding-top: 45px;
+}
+@media (max-width: 768px){
+	.section-card-item-text {
+		text-align:	center;
+	}
+	.section-title {
+		font-size: 46px;
+	}
+}
+/* ********** Конец Личные истории и контекста********** */
