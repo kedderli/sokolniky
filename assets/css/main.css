@@ -4,6 +4,9 @@ html, body {
 	position: relative;
 	overflow-x: hidden;
 }
+p:not(:last-child) {
+	margin-bottom: 40px;
+}
 
 /* ********** Начало CONTAINER ********** */
 
@@ -281,3 +284,130 @@ html, body {
 	}
 }
 /* ********** Конец HEADER ********** */
+
+/* ********** Начало ФОТОГРАФИЙ ********** */
+.foto-section-wrapper {
+
+}
+.foto-tab-list {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 88px;
+}
+.foto-tab-item {
+
+}
+.foto-slider-item {
+	display: flex;
+}
+.foto-slider-item-wrapper {
+	outline: none;
+}
+.foto-slider-item {
+	/*flex-basis: 50%;*/
+}
+.foto-slider-content {
+
+}
+.foto-slide-title {
+	font-family: Roboto Slab;
+	font-weight: bold;
+	font-size: 16px;
+	color: #3C3973;
+}
+.foto-slide-text {
+	font-family: Roboto Slab;
+	font-weight: normal;
+	font-size: 16px;
+}
+.foto-slider-foto img {
+	display: block;
+}
+.foto-slider-list .slick-dots {
+	display: none!important;
+}
+
+/* Анимация вкладок */
+.foto-tab-item > .shapes-item {
+	align-self: center;
+	background-color: #C5DA9A;
+	border-radius: 0 0 10px 10px ;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	width: 80px;
+	min-height: 42px;
+	color: #748552;
+	transition: all .2s linear;
+}
+.shapes-item__text {
+	display: block;
+	position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+	font-size: 2rem;
+	font-weight: 500;
+	text-align: center;
+	position: relative;
+	z-index: 10;
+	font-family: Roboto Slab;
+	font-weight: normal;
+	font-size: 18px;
+	transition: top .2s linear;
+}
+.shapes-item__left {
+	background-color: #C5DA9A;
+	border-radius: 0 0 0 10px;
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	bottom: -0px;
+	left: 0;
+	transform: skewY(0);
+	transition: all .2s linear;
+	height: 20px;
+	width: calc(50% + 1px); /*	FIX	*/
+}
+.shapes-item__right {
+	background-color: #C5DA9A;
+	border-radius: 0 0 10px 0;
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	bottom: -0px;
+	right: 0;
+	transition: all .2s linear;
+	transform: skewY(0);
+	height: 20px;
+	width: calc(50% + 1px); /*	FIX	*/
+}
+.tab-active .shapes-item__left {
+	height: 40px;
+	bottom: -30px;
+	transform: skewY(-25deg);
+	background-color: #3C3973;
+}
+.tab-active .shapes-item__right {
+	height: 40px;
+	bottom: -30px;
+	transform: skewY(25deg);
+	background-color: #3C3973;
+}
+.tab-active .shapes-item {
+	border-radius: 0;
+	background-color: #3C3973;
+	color: #fff;
+}
+.tab-active .shapes-item__text {
+	top: 15px;
+}
+.shapes-item:hover,
+.shapes-item:hover .shapes-item__left,
+.shapes-item:hover .shapes-item__right {
+	background-color: #3C3973;
+	color: #fff;
+}
+/* ********** Конец ФОТОГРАФИЙ ********** */
