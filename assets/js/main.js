@@ -92,7 +92,7 @@ for (let i = 0; i < dotsTrue.length; i++) {
 			dotsFalse[i].classList.toggle('tab-active')
 			activeSlide = i
 			dotsTrue[i].dispatchEvent(event)
-			setTimeout(() => {tabChangeNow = false}, 701)
+			setTimeout(() => {tabChangeNow = false}, 650)
 		}
 	})
 }
@@ -176,35 +176,37 @@ $('#context .section-card-list').slick({
 		});
 
 //Адаптивная высота слайдов истории и котекста
-const fotoCardAll2 = document.querySelectorAll('#context .section-card-item')
-let fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map((line) => line.clientHeight))))
-const fotoCardAll = document.querySelectorAll('#story .section-card-item')
-let fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map((line) => line.clientHeight))))
+window.onload = function() {
+	const fotoCardAll2 = document.querySelectorAll('#context .section-card-item')
+	let fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map((line) => line.clientHeight))))
+	const fotoCardAll = document.querySelectorAll('#story .section-card-item')
+	let fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map((line) => line.clientHeight))))
 
-fotoCardAll2.forEach((item) => {
-	item.style.height = fotoCardMaxHeight2 + 'px'
-})
-fotoCardAll.forEach((item) => {
-	item.style.height = fotoCardMaxHeight + 'px'
-})
-
-$(window).resize(() => {
-	fotoCardAll2.forEach((item) => {
-		item.style.height = 100 + '%'
-	})
-	fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map((line) => line.clientHeight))))
 	fotoCardAll2.forEach((item) => {
 		item.style.height = fotoCardMaxHeight2 + 'px'
 	})
-
-	fotoCardAll.forEach((item) => {
-		item.style.height = 100 + '%'
-	})
-	fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map((line) => line.clientHeight))))
 	fotoCardAll.forEach((item) => {
 		item.style.height = fotoCardMaxHeight + 'px'
 	})
-}) 
+
+	$(window).resize(() => {
+		fotoCardAll2.forEach((item) => {
+			item.style.height = 100 + '%'
+		})
+		fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map((line) => line.clientHeight))))
+		fotoCardAll2.forEach((item) => {
+			item.style.height = fotoCardMaxHeight2 + 'px'
+		})
+
+		fotoCardAll.forEach((item) => {
+			item.style.height = 100 + '%'
+		})
+		fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map((line) => line.clientHeight))))
+		fotoCardAll.forEach((item) => {
+			item.style.height = fotoCardMaxHeight + 'px'
+		})
+	}) 
+}
 
 //Интерактивная карта 
 $('.map-card-list').slick({
