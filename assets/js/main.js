@@ -242,3 +242,40 @@ for (let i = 0; i < circleList.length; i++) {
 		circleActicve = i
 	})
 }
+
+//Инициализация слайдера партнёров
+$('.partners-list').slick({
+			dots: false,
+			infinite: false,
+			arrows: true,
+			prevArrow: '<button type = "button" class = "partners-slider-prev"><img src="assets/image/icons/prev.png"></button>',
+	 		nextArrow: '<button type = "button" class = "partners-slider-next"><img src="assets/image/icons/next.png"></button>',
+			draggable: false,
+			swipe: false,
+			speed: 500,
+			slidesToShow: 6,
+			slidesToScroll: 6,
+			responsive: [
+				{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 4,
+						slidesToScroll: 4,
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2,
+					}
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+					}
+				}
+			]
+		});

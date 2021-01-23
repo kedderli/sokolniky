@@ -28,6 +28,28 @@ a {
 	padding-top: 40px;
 	padding-bottom: 40px;
 }
+.section-title {
+	margin: 0;
+	display: inline-block;
+	font-family: Amatic SC;
+	font-weight: bold;
+	font-size: 58px;
+	text-transform: uppercase;
+	color: #3C3973;
+}
+.slide-title {
+	font-family: Roboto Slab;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 28px;
+	color: #3C3973;
+}
+.slide-text {
+	font-family: Roboto Slab;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 28px;
+}
 .button {
 	font-family: Amatic SC;
 	font-weight: bold;
@@ -52,6 +74,12 @@ a {
 	.md-show {
 		display: inline-block;
 	}
+	.section-title {
+		text-align: center;
+		font-size: 46px;
+		display: block;
+	}
+
 }
 
 /* ********** Начало CONTAINER ********** */
@@ -371,6 +399,7 @@ a {
 .foto-slider-button {
 	margin-top: 45px;
 	margin-bottom: 45px;
+	margin-left: 5px;
 }
 .slick-prev-a {
 	border-radius: 0 0 10px 10px;
@@ -534,15 +563,6 @@ a {
 	justify-content: space-between;
 	align-items: center;
 }
-.section-title {
-	margin: 0;
-	display: inline-block;
-	font-family: Amatic SC;
-	font-weight: bold;
-	font-size: 58px;
-	text-transform: uppercase;
-	color: #3C3973;
-}
 .section-card-list {
 	overflow: hidden;
 	padding-top: 31px;
@@ -646,9 +666,6 @@ a {
 	.section-card-item-text {
 		text-align:	center;
 	}
-	.section-title {
-		font-size: 46px;
-	}
 }
 /* ********** Конец Личные истории и контекста ********** */
 
@@ -736,31 +753,75 @@ a {
 }
 
 /* ********** Конец карты ********** */
-/*@media (max-width: 2100px){
-	.map-wrapper {
-		transform: translateX(40vh);
+
+/* ********** Начало О проекте ********** */
+.description-wrapper {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 21px;
+	margin-bottom: 38px;
+}
+.partners-list {
+	width: calc(100% - 70px);
+	margin: 0 auto;
+}
+.partners-item-wrapper {
+	outline: none;
+}
+.partners-item {
+	position: relative;
+	margin: 0 auto;
+	background: #FFFFFF;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+	border-radius: 5px;
+	width: 160px;
+	height: 80px;
+}
+.partners-item img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.partners-slider-prev,
+.partners-slider-next {
+	outline: none;
+	cursor: pointer;
+	position: absolute;
+	border: none;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: #C5DA9A;
+	width: 32px;
+	height: 32px;
+	border-radius: 50px;
+}
+.partners-slider-prev {
+	left: -35px;
+}
+.partners-slider-next {
+	right: -35px;
+}
+.partners-slider-prev img,
+.partners-slider-next img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.partners-list .slick-disabled {
+	opacity: .3;
+	cursor: auto;
+}
+.partners-list .slick-list {
+	padding: 15px 0;
+}
+@media (max-width: 768px){
+	.description-wrapper {
+		text-align: center;
+	}
+	.description-image {
+		display: none;
 	}
 }
-@media (max-width: 1440px){
-	.map-wrapper {
-		transform: translateX(60vh);
-	}
-}
-@media (max-width: 1200px){
-	.map-section-wrapper {
-		display: block;
-	}
-	.map-section-description {
-		margin-bottom: 0;
-	}
-	.map-card-list {
-		max-width: 100%;
-	}
-	.map-card-item {
-		max-width: 100%;
-	}
-	.map-wrapper {
-		position: relative;
-		transform: none;
-	}
-}*/
+/* ********** Конец О проекте ********** */
