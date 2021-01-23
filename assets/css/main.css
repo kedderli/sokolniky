@@ -4,19 +4,29 @@ html, body {
 	position: relative;
 	overflow-x: hidden;
 }
+p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
 p:not(:last-child) {
 	margin-bottom: 40px;
 }
 a {
 	text-decoration: none;
 }
-
+.overflowy {
+	overflow-y: hidden;
+}
 .bg-noise {
 	background-image: url('../image/elements/bg-noise-pattern.png');
 }
+.bg-gray{
+	background-color: #F6F6F6;
+}
 .section {
-	padding-top: 45px;
-	padding-bottom: 45px;
+	position: relative;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
 .button {
 	font-family: Amatic SC;
@@ -78,7 +88,7 @@ a {
 
 /* ********** Начало HEADER ********** */
 .header {
-
+	position: relative;
 }
 .header-top-wrapper	{
 	background-color: #fff;
@@ -258,7 +268,9 @@ a {
 	}
 	.header-nav-list {
 		position: absolute;
-
+		overflow-y: auto;
+		padding-bottom: 100px;
+		height: 100%;
 		top: 100px;
 		right: -250px;
 		flex-direction: column;
@@ -357,7 +369,8 @@ a {
 	width: 100%;
 }
 .foto-slider-button {
-	margin-top: 40px;
+	margin-top: 45px;
+	margin-bottom: 45px;
 }
 .slick-prev-a {
 	border-radius: 0 0 10px 10px;
@@ -413,10 +426,18 @@ a {
 	.foto-slider-item-wrapper {
 		text-align: center;
 	}
+	.foto-slider-button {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
 }
 @media (max-width: 375px){
 	.foto-tab-list {
-		max-width: calc(90% - 181px);
+		max-width: calc(95% - 181px);
+	}
+	.shapes-item {
+		padding-right: 5px;
+		padding-left: 5px;
 	}
 }
 
@@ -507,7 +528,7 @@ a {
 }
 /* ********** Конец ФОТОГРАФИЙ ********** */
 
-/* ********** Начало Личные истории и контекста********** */
+/* ********** Начало Личные истории и контекста ********** */
 .section-head-wrapper {
 	display: flex;
 	justify-content: space-between;
@@ -530,6 +551,7 @@ a {
 	overflow: visible;
 }
 .section-card-item-wrapper {
+	outline: none;
 	padding-left: 5px;
 	padding-right: 5px;
 	transition: transform .3s;
@@ -617,10 +639,10 @@ a {
 .section-head-wrapper .slick-disabled {
 	opacity: 0.5;
 }
-.section-button-wrapper {
-	padding-top: 45px;
-}
 @media (max-width: 768px){
+	.section-button-wrapper {
+		padding-top: 45px;
+	}
 	.section-card-item-text {
 		text-align:	center;
 	}
@@ -628,4 +650,117 @@ a {
 		font-size: 46px;
 	}
 }
-/* ********** Конец Личные истории и контекста********** */
+/* ********** Конец Личные истории и контекста ********** */
+
+/* ********** Начало карты ********** */
+.section-map {
+	overflow: hidden;
+	position: relative;
+	min-height: 645px;
+}
+.map-section-wrapper {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+.map-section-description {
+	position: relative;
+	z-index: 10;
+	margin-top: 45px;
+	margin-bottom: 45px;
+}
+.map-card-list {
+	max-width: 352px;
+	margin-bottom: 0!important;
+}
+.map-card-item {
+	outline: none;
+	margin-top: 30px;
+	max-width: 352px;
+	background: #FFFFFF;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+	border-radius: 5px;
+	overflow: hidden;
+}
+.map-card-header {
+	background: #3C3973;
+	padding: 10px 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.map-card-title {
+	font-family: Amatic SC;
+	font-weight: bold;
+	font-size: 44px;
+	line-height: 55px;
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+.map-slide-index-wrapper {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	background-color: #C5DA9A;
+	border-radius: 20px;
+}
+.map-slide-index {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: Roboto Slab;
+	font-weight: bold;
+	font-size: 16px;
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+.map-card-content {
+	padding: 32px;
+	font-family: Roboto Slab;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 28px;
+}
+.map-card-worktime {
+	color: #3C3973;
+}
+.map-wrapper {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	transform: translateX(30%);
+}
+.map-card-list .slick-dots {
+	display: none!important;
+}
+
+/* ********** Конец карты ********** */
+/*@media (max-width: 2100px){
+	.map-wrapper {
+		transform: translateX(40vh);
+	}
+}
+@media (max-width: 1440px){
+	.map-wrapper {
+		transform: translateX(60vh);
+	}
+}
+@media (max-width: 1200px){
+	.map-section-wrapper {
+		display: block;
+	}
+	.map-section-description {
+		margin-bottom: 0;
+	}
+	.map-card-list {
+		max-width: 100%;
+	}
+	.map-card-item {
+		max-width: 100%;
+	}
+	.map-wrapper {
+		position: relative;
+		transform: none;
+	}
+}*/

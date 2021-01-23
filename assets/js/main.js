@@ -6,11 +6,13 @@ const navList = document.querySelector('#nav-list');
 		navToggle.classList.toggle('header-nav-button-active');
 		navList.classList.toggle('header-nav-show');
 		document.querySelector('body').classList.toggle('overflowy')
+		document.querySelector('html').classList.toggle('overflowy')
 	}
 	navList.onclick = function (){
 		navToggle.classList.toggle('header-nav-button-active');
 		navList.classList.toggle('header-nav-show');
 		document.querySelector('body').classList.toggle('overflowy')
+		document.querySelector('html').classList.toggle('overflowy')
 	}
 
 
@@ -19,7 +21,7 @@ $('.foto-slider-list').slick({
 			dots: true,
 			infinite: false,
 			arrows: false,
-			speed: 300,
+			speed: 700,
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			draggable: false,
@@ -30,7 +32,7 @@ $('.foto-slider-list').slick({
 const fotoSlider = $('.foto-tab-list').slick({
 			dots: false,
 			infinite: false,
-			speed: 300,
+			speed: 500,
 			slidesToShow: 11,
 			slidesToScroll: 11,
 			prevArrow: '<button type = "button" class = "slick-prev-a"><img src="assets/image/icons/prev.png"></button>',
@@ -80,13 +82,18 @@ const dotsFalse = document.querySelectorAll('.foto-tab-item')
 
 let activeSlide = 0
 let event = new Event("click")
+let tabChangeNow = false
 
 for (let i = 0; i < dotsTrue.length; i++) {
 	dotsFalse[i].addEventListener('click', () => {
-		dotsFalse[activeSlide].classList.toggle('tab-active')
-		dotsFalse[i].classList.toggle('tab-active')
-		activeSlide = i
-		dotsTrue[i].dispatchEvent(event)
+		if (!tabChangeNow) {
+			tabChangeNow = true
+			dotsFalse[activeSlide].classList.toggle('tab-active')
+			dotsFalse[i].classList.toggle('tab-active')
+			activeSlide = i
+			dotsTrue[i].dispatchEvent(event)
+			setTimeout(() => {tabChangeNow = false}, 701)
+		}
 	})
 }
 
@@ -102,13 +109,13 @@ fotoSlider.on('afterChange', () => {
 
 //Инициализация слайдера историй
 
-$('.section-card-list').slick({
+$('#story .section-card-list').slick({
 			dots: false,
 			infinite: false,
 			arrows: true,
 			draggable: false,
 			swipe: false,
-			appendArrows: $('.section-head-wrapper'),
+			appendArrows: $('#story .section-head-wrapper'),
 			prevArrow: '<button type = "button" class = "section-slider-prev"><img src="assets/image/icons/prev.png"></button>',
 	 		nextArrow: '<button type = "button" class = "section-slider-next"><img src="assets/image/icons/next.png"></button>',
 			speed: 300,
@@ -134,15 +141,62 @@ $('.section-card-list').slick({
 			]
 		});
 
-const fotoCardAll = document.querySelectorAll('#story-list .section-card-item')
+//Инициализация слайдера контекста
+
+$('#context .section-card-list').slick({
+			dots: false,
+			infinite: false,
+			arrows: true,
+			draggable: false,
+			swipe: false,
+			appendArrows: $('#context .section-head-wrapper'),
+			prevArrow: '<button type = "button" class = "section-slider-prev"><img src="assets/image/icons/prev.png"></button>',
+	 		nextArrow: '<button type = "button" class = "section-slider-next"><img src="assets/image/icons/next.png"></button>',
+			speed: 300,
+			slidesToShow: 3,
+			slidesToScroll: 3,	
+			responsive: [
+				{
+					breakpoint: 1200,
+					arrows: true,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1,
+					}
+				},
+				{
+					breakpoint: 768,
+					arrows: true,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+					}
+				}
+			]
+		});
+
+//Адаптивная высота слайдов истории и котекста
+const fotoCardAll2 = document.querySelectorAll('#context .section-card-item')
+let fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map((line) => line.clientHeight))))
+const fotoCardAll = document.querySelectorAll('#story .section-card-item')
 let fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map((line) => line.clientHeight))))
 
-
+fotoCardAll2.forEach((item) => {
+	item.style.height = fotoCardMaxHeight2 + 'px'
+})
 fotoCardAll.forEach((item) => {
 	item.style.height = fotoCardMaxHeight + 'px'
 })
 
 $(window).resize(() => {
+	fotoCardAll2.forEach((item) => {
+		item.style.height = 100 + '%'
+	})
+	fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map((line) => line.clientHeight))))
+	fotoCardAll2.forEach((item) => {
+		item.style.height = fotoCardMaxHeight2 + 'px'
+	})
+
 	fotoCardAll.forEach((item) => {
 		item.style.height = 100 + '%'
 	})
@@ -151,3 +205,38 @@ $(window).resize(() => {
 		item.style.height = fotoCardMaxHeight + 'px'
 	})
 }) 
+
+//Интерактивная карта 
+$('.map-card-list').slick({
+			dots: true,
+			infinite: false,
+			arrows: false,
+			draggable: false,
+			swipe: false,
+			adaptiveHeight: true,
+			fade: true,
+			speed: 500,
+			slidesToShow: 1,
+			slidesToScroll: 1,	
+		});
+
+const mapSliderDots = document.querySelectorAll('.map-card-list .slick-dots li')
+circleActicve = 0
+circleList = document.querySelectorAll('.circle')
+const eventMap = new Event("click")
+
+for (let i = 0; i < circleList.length; i++) {
+	circleList[i].addEventListener('click', () => {
+		circleList[circleActicve].childNodes[1].classList.toggle('circle-big-active')
+		circleList[circleActicve].childNodes[3].classList.toggle('circle-small-active')
+		circleList[circleActicve].childNodes[5].classList.toggle('circle-text-active')
+
+		circleList[i].childNodes[1].classList.toggle('circle-big-active')
+		circleList[i].childNodes[3].classList.toggle('circle-small-active')
+		circleList[i].childNodes[5].classList.toggle('circle-text-active')
+
+		mapSliderDots[i].dispatchEvent(eventMap)
+
+		circleActicve = i
+	})
+}
