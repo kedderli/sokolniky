@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="overflowy">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body class="overflowy">
+<body>
 	<div class="preloader" id="preloader">
 		<div class="preloader-wrapper">
 			<div class="lds-dual-ring"></div>
@@ -25,7 +25,7 @@
 			<div class="container header-top-flexbox">
 				<div class="header-top-logo-wrapper">
 					<a href="#">
-						<img src="assets/image/icons/logo_large.png" alt="Детство в Сокольниках" class="header-top-logo">
+						<img src="assets/image/icons/logo_small.png" alt="Детство в Сокольниках" class="header-top-logo">
 					</a>
 				</div>
 				<div class="header-nav-wrapper">
@@ -653,20 +653,47 @@
 						}
 						.circle .circle-small {
 							fill: #3C3973;
+							-webkit-transform: scale(1);
+							   -moz-transform: scale(1);
+							    -ms-transform: scale(1);
+							     -o-transform: scale(1);
+							        transform: scale(1);
+							-webkit-transition: -webkit-transform 0.4s;
+							transition: -webkit-transform 0.4s;
+							-o-transition: -o-transform 0.4s;
+							-moz-transition: transform 0.4s, -moz-transform 0.4s;
 							transition: transform 0.4s;
+							transition: transform 0.4s, -webkit-transform 0.4s, -moz-transform 0.4s, -o-transform 0.4s;
 						}
 						.circle .circle-small-active {
-							transform: scale(2.2);
+							-webkit-transform: scale(2.25);
+							   -moz-transform: scale(2.25);
+							    -ms-transform: scale(2.25);
+							     -o-transform: scale(2.25);
+							        transform: scale(2.25);
 						}
 						.circle .circle-big {
 							fill: white; 
 							stroke: #3C3973; 
-							stroke-width: 2;
-							transform: scale(0);
+							stroke-width: 1;
+							-webkit-transform: scale(0);
+							   -moz-transform: scale(0);
+							    -ms-transform: scale(0);
+							     -o-transform: scale(0);
+							        transform: scale(0);
+							-webkit-transition: -webkit-transform 0.3s;
+							transition: -webkit-transform 0.3s;
+							-o-transition: -o-transform 0.3s;
+							-moz-transition: transform 0.3s, -moz-transform 0.3s;
 							transition: transform 0.3s;
+							transition: transform 0.3s, -webkit-transform 0.3s, -moz-transform 0.3s, -o-transform 0.3s;
 						}
 						.circle .circle-big-active {
-							transform: scale(1);
+							-webkit-transform: scale(3);
+							   -moz-transform: scale(3);
+							    -ms-transform: scale(3);
+							     -o-transform: scale(3);
+							        transform: scale(3);
 						}
 						.circle .circle-text {
 							font-size: 0px; 
@@ -674,6 +701,9 @@
 							font-family: Avenir	Helvetica, sans-serif;
 							fill: #fff;
 							text-anchor: middle;
+							-webkit-transition: font-size 0.4s;
+							-o-transition: font-size 0.4s;
+							-moz-transition: font-size 0.4s;
 							transition: font-size 0.4s;
 						}
 						.circle .circle-text-active {
@@ -731,42 +761,42 @@
 						</g>
 					</g>
 					<g class="circle">
-						<circle transform-origin="730.5 203.5" style="" r="27.5" cx="730.5" cy="203.5" class="circle-big circle-big-active"/>
+						<circle transform-origin="730.5 203.5" r="9.1" cx="730.5" cy="203.5" class="circle-big circle-big-active"/>
 						<circle transform-origin="730.5 203.5" r="10" cx="730.5" cy="203.5" class="circle-small circle-small-active"/>
 						<text x="730.5" y="209.5" class="circle-text circle-text-active">F1</text>
 					</g>
 					<g class="circle">
-						<circle transform-origin="588.5 279.5" r="27.5" cx="588.5" cy="279.5" class="circle-big"/>
+						<circle transform-origin="588.5 279.5" r="9.1" cx="588.5" cy="279.5" class="circle-big"/>
 						<circle transform-origin="588.5 279.5" r="10" cx="588.5" cy="279.5" class="circle-small"/>
 						<text x="588.5" y="285.5" class="circle-text">B2</text>
 					</g>
 					<g class="circle">
-						<circle transform-origin="393 195" r="27.5" cx="393" cy="195" class="circle-big"/>
+						<circle transform-origin="393 195" r="9.1" cx="393" cy="195" class="circle-big"/>
 						<circle transform-origin="393 195" r="10" cx="393" cy="195" class="circle-small"/>
 						<text x="393" y="201" class="circle-text">B3</text>
 					</g>
 					<g class="circle">
-						<circle transform-origin="314.5 269" r="27.5" cx="314.5" cy="269" class="circle-big"/>
+						<circle transform-origin="314.5 269" r="9.1" cx="314.5" cy="269" class="circle-big"/>
 						<circle transform-origin="314.5 269" r="10" cx="314.5" cy="269" class="circle-small"/>
 						<text x="314.5" y="275" class="circle-text">B4</text>
 					</g>
 					<g class="circle">
-						<circle transform-origin="534 175" r="27.5" cx="534" cy="175" class="circle-big"/>
+						<circle transform-origin="534 175" r="9.1" cx="534" cy="175" class="circle-big"/>
 						<circle transform-origin="534 175" r="10" cx="534" cy="175" class="circle-small"/>
 						<text x="534" y="181" class="circle-text">B5</text>
 					</g>
 					<g class="circle">
-						<circle transform-origin="621.5 107" r="27.5" cx="621.5" cy="107" class="circle-big"/>
+						<circle transform-origin="621.5 107" r="9.1" cx="621.5" cy="107" class="circle-big"/>
 						<circle transform-origin="621.5 107" r="10" cx="621.5" cy="107" class="circle-small"/>
 						<text x="621.5" y="113" class="circle-text">B6</text>
 					</g>
 					<g class="circle">
-						<circle transform-origin="678 437.5" r="27.5" cx="678" cy="437.5" class="circle-big"/>
+						<circle transform-origin="678 437.5" r="9.1" cx="678" cy="437.5" class="circle-big"/>
 						<circle transform-origin="678 437.5" r="10" cx="678" cy="437.5" class="circle-small"/>
 						<text x="678" y="443.5" class="circle-text">B7</text>
 					</g>
 					<g class="circle">
-						<circle transform-origin="451 140.5" r="27.5" cx="451" cy="140.5" class="circle-big"/>
+						<circle transform-origin="451 140.5" r="9.1" cx="451" cy="140.5" class="circle-big"/>
 						<circle transform-origin="451 140.5" r="10" cx="451" cy="140.5" class="circle-small"/>
 						<text x="451" y="146.5" class="circle-text">B8</text>
 					</g>

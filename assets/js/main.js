@@ -1,44 +1,44 @@
-window.onload = function () {
+$( document ).ready(function () {
 	//Прелоадер
 	let preloader = document.querySelector('#preloader')
 	preloader.style.opacity = '0'
 	document.querySelector('html').classList.remove('overflowy')
 	document.querySelector('body').classList.remove('overflowy')
-	setTimeout(() => {
+	setTimeout(function () {
 		preloader.style.display = 'none'
 	}, 700)
 
 	//Адаптивная высота слайдов истории и котекста
 	const fotoCardAll2 = document.querySelectorAll('#context .section-card-item')
-	let fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map((line) => line.clientHeight))))
+	let fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map(function(line) {line.clientHeight}))))
 	const fotoCardAll = document.querySelectorAll('#story .section-card-item')
-	let fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map((line) => line.clientHeight))))
+	let fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map(function (line) {line.clientHeight}))))
 
-	fotoCardAll2.forEach((item) => {
+	fotoCardAll2.forEach(function (item) {
 		item.style.height = fotoCardMaxHeight2 + 'px'
 	})
-	fotoCardAll.forEach((item) => {
+	fotoCardAll.forEach(function (item) {
 		item.style.height = fotoCardMaxHeight + 'px'
 	})
 
-	$(window).resize(() => {
-		fotoCardAll2.forEach((item) => {
+	$(window).resize(function () {
+		fotoCardAll2.forEach(function (item) {
 			item.style.height = 100 + '%'
 		})
-		fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map((line) => line.clientHeight))))
-		fotoCardAll2.forEach((item) => {
+		fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map(function (line) {line.clientHeight}))))
+		fotoCardAll2.forEach(function (item) {
 			item.style.height = fotoCardMaxHeight2 + 'px'
 		})
 
-		fotoCardAll.forEach((item) => {
+		fotoCardAll.forEach(function (item) {
 			item.style.height = 100 + '%'
 		})
-		fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map((line) => line.clientHeight))))
-		fotoCardAll.forEach((item) => {
+		fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map(function (line) {line.clientHeight}))))
+		fotoCardAll.forEach(function (item) {
 			item.style.height = fotoCardMaxHeight + 'px'
 		})
 	}) 
-}
+})
 
 // Кнопка разворачивания меню
 const navToggle = document.querySelector('#nav-toggle');
@@ -49,7 +49,9 @@ const navList = document.querySelector('#nav-list');
 		navList.classList.toggle('header-nav-show');
 		document.querySelector('body').classList.toggle('overflowy')
 		document.querySelector('html').classList.toggle('overflowy')
-		setTimeout(() => {navList.classList.toggle('overflowy-auto')}, 500)
+		setTimeout(function () {
+			navList.classList.toggle('overflowy-auto')
+		}, 500)
 	}
 	navList.onclick = function (){
 		navToggle.classList.toggle('header-nav-button-active');
@@ -124,23 +126,26 @@ const dotsTrue = document.querySelectorAll('.slick-dots li')
 const dotsFalse = document.querySelectorAll('.foto-tab-item')
 
 let activeSlide = 0
-let event = new Event("click")
 let tabChangeNow = false
 
-for (let i = 0; i < dotsTrue.length; i++) {
-	dotsFalse[i].addEventListener('click', () => {
-		if (!tabChangeNow) {
-			tabChangeNow = true
-			dotsFalse[activeSlide].classList.toggle('tab-active')
-			dotsFalse[i].classList.toggle('tab-active')
-			activeSlide = i
-			dotsTrue[i].dispatchEvent(event)
-			setTimeout(() => {tabChangeNow = false}, 650)
-		}
-	})
+const changeSlideFoto = function () {
+	if (!tabChangeNow) {
+		tabChangeNow = true
+		dotsFalse[activeSlide].classList.toggle('tab-active')
+		dotsFalse[this].classList.toggle('tab-active')
+		activeSlide = this
+		dotsTrue[this].click()
+		setTimeout(function () {
+			tabChangeNow = false
+		}, 650)
+	}
 }
 
-fotoSlider.on('afterChange', () => {
+for (let i = 0; i < dotsTrue.length; i++) {
+	dotsFalse[i].addEventListener('click', changeSlideFoto.bind(i))
+}
+
+fotoSlider.on('afterChange', function () {
 	if (document.documentElement.clientWidth <= 390) {
 		let currentSlide = fotoSlider.slick('slickCurrentSlide')
 		dotsFalse[activeSlide].classList.toggle('tab-active')
@@ -243,23 +248,43 @@ $('.map-card-list').slick({
 const mapSliderDots = document.querySelectorAll('.map-card-list .slick-dots li')
 circleActicve = 0
 circleList = document.querySelectorAll('.circle')
-const eventMap = new Event("click")
 
-for (let i = 0; i < circleList.length; i++) {
-	circleList[i].addEventListener('click', () => {
+const mapDotsChange = function (ind) {
+	if (circleList[1].childNodes[1].classList) {
 		circleList[circleActicve].childNodes[1].classList.toggle('circle-big-active')
 		circleList[circleActicve].childNodes[3].classList.toggle('circle-small-active')
 		circleList[circleActicve].childNodes[5].classList.toggle('circle-text-active')
 
-		circleList[i].childNodes[1].classList.toggle('circle-big-active')
-		circleList[i].childNodes[3].classList.toggle('circle-small-active')
-		circleList[i].childNodes[5].classList.toggle('circle-text-active')
+		circleList[ind].childNodes[1].classList.toggle('circle-big-active')
+		circleList[ind].childNodes[3].classList.toggle('circle-small-active')
+		circleList[ind].childNodes[5].classList.toggle('circle-text-active')
 
-		mapSliderDots[i].dispatchEvent(eventMap)
+		mapSliderDots[ind].click()
 
-		circleActicve = i
-	})
-}
+		circleActicve = ind
+	} else {
+		circleList[circleActicve].childNodes[1].setAttribute("r", "0")
+		circleList[circleActicve].childNodes[3].setAttribute("r", "10")
+		circleList[circleActicve].childNodes[5].setAttribute("class", "circle-text")
+
+		circleList[ind].childNodes[1].setAttribute("r", "27.5")
+		circleList[ind].childNodes[3].setAttribute("r", "22.5")
+		circleList[ind].childNodes[5].setAttribute("class", "circle-text circle-text-active")
+
+		mapSliderDots[ind].click()
+
+		circleActicve = ind
+	}
+		
+} 
+
+for (let i = 0; i < circleList.length; i++) {
+	if (!(circleList[1].childNodes[1].classList)) {
+		circleList[0].childNodes[1].setAttribute("r", "27.3")
+		circleList[0].childNodes[3].setAttribute("r", "22.5")
+	}
+	circleList[i].addEventListener('click', mapDotsChange.bind(null, i))
+}		
 
 //Инициализация слайдера партнёров
 $('.partners-list').slick({
