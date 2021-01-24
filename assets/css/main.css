@@ -17,6 +17,9 @@ a {
 .overflowy {
 	overflow-y: hidden;
 }
+.overflowy-auto {
+	overflow-y: auto!important; 
+}
 .bg-noise {
 	background-image: url('../image/elements/bg-noise-pattern.png');
 }
@@ -120,6 +123,9 @@ a {
 }
 .header-top-wrapper	{
 	background-color: #fff;
+	position: relative;
+	z-index: 2;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
 }
 .header-top-flexbox {
 	display: flex;
@@ -180,6 +186,8 @@ a {
 .header-top-icons-list {
 	display: flex;
 	align-items: center;
+	height: 100%;
+	margin-left: 30px;
 }
 .header-top-icons-item:not(:last-child) {
 	margin-right: 8px;
@@ -296,32 +304,41 @@ a {
 	}
 	.header-nav-list {
 		position: absolute;
-		overflow-y: auto;
-		padding-bottom: 100px;
-		height: 100%;
+		overflow-y: hidden;
+		position: fixed;
+		height: 0px;
 		top: 100px;
-		right: -250px;
+		left: 0;
+		right: 0;
+		box-sizing: border-box;
 		flex-direction: column;
-		background-color: #fff;
-		transition: transform 0.5s; 
+		background-color: #F6F6F6;
+		transition: height 0.5s; 
+	}
+	.header-nav-show {
+		height: calc(100vh - 100px);
+	}
+	.header-nav-item:first-child {
+		padding-top: 30px;
 	}
 	.header-nav-item {
 		width: 100%;
-		max-width: 250px;
 		margin-right: 0!important;
 	}
-	.header-nav-item:not(:last-child) {
-		border-bottom: 1px solid #3C3973;
-	}
 	.header-nav-item-link {
-		padding: 10px 30px;
+		position: relative;
+		padding: 15px 30px;
 		box-sizing: border-box;
 	}
-	.header-nav-show {
-		transform: translateX(-250px);
+	.header-nav-link-text {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 	.header-top-icons-list {
-		display: none;
+		margin-top: 15px;
+		margin-left: 0;
+		justify-content: center;
 	}
 }
 @media (max-width: 992px){
@@ -676,10 +693,10 @@ a {
 	min-height: 645px;
 }
 .map-section-wrapper {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+
 }
 .map-section-description {
+	max-width: 420px;
 	position: relative;
 	z-index: 10;
 	margin-top: 45px;
@@ -733,6 +750,9 @@ a {
 }
 .map-card-content {
 	padding: 32px;
+	box-sizing: border-box;
+	max-height: 385px;
+	overflow-y: auto;
 	font-family: Roboto Slab;
 	font-weight: normal;
 	font-size: 16px;
@@ -834,6 +854,7 @@ a {
 	max-width: 924px;
 }
 .form-input {
+	outline: none;
 	background-color: #fff;
 	border: 2px solid #C5DA9A;
 	border-radius: 5px;

@@ -7,6 +7,7 @@ const navList = document.querySelector('#nav-list');
 		navList.classList.toggle('header-nav-show');
 		document.querySelector('body').classList.toggle('overflowy')
 		document.querySelector('html').classList.toggle('overflowy')
+		setTimeout(() => {navList.classList.toggle('overflowy-auto')}, 500)
 	}
 	navList.onclick = function (){
 		navToggle.classList.toggle('header-nav-button-active');
