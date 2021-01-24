@@ -766,12 +766,58 @@ a {
 	right: 0;
 	top: 0;
 	height: 100%;
-	transform: translateX(30%);
 }
 .map-card-list .slick-dots {
 	display: none!important;
 }
-
+@media (max-width: 2100px){
+	.map-wrapper {
+		transform: translateX(20%);		
+	}
+}
+@media (max-width: 1600px){
+	.map-wrapper {
+		transform: translateX(35%);		
+	}
+}
+@media (max-width: 1200px){
+	.section-map {
+		min-height: 1px;
+	}
+	.section-map .section-title {
+		margin-top: 45px;
+	}
+	.map-section-wrapper .container {
+		max-width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.map-section-description {
+		position: relative;
+		left: 0;
+		right: 0;
+		max-width: 100%;
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+	.map-card-list {
+		max-width: 100%;
+		width: 100%;
+	}
+	.map-card-item {
+		max-width: 100%;
+		height: 100%;
+		border-radius: 0;
+	}
+	.map-card-content {
+		max-height: 100%;
+	}
+	.map-wrapper {
+		position: relative;
+		transform: none;
+		transform: scale(1.05) translateX(5%);
+	}
+}
 /* ********** Конец карты ********** */
 
 /* ********** Начало О проекте ********** */
@@ -898,3 +944,84 @@ a {
 	}
 }
 /* ********** Конец формы ********** */
+
+/* ********** Начало футера ********** */
+.footer {
+	background-color: #3C3973;
+	color: #fff;
+	padding-top: 32px;
+	padding-bottom: 29px;
+	font-family: Roboto Slab;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 28px;
+	color: #FFFFFF;
+}
+.footer-list {
+	display: flex;
+	justify-content: space-between;
+}
+.footer-nav-list {
+	display: flex;
+}
+.footer-nav-item:not(:first-child) {
+	padding-left: 27px;
+}
+.footer-nav-item:not(:last-child) {
+	border-right: 1px solid rgba(255, 255, 255, 0.25);
+	padding-right: 27px;
+}
+.footer-nav-list a {
+	color: #fff;
+}
+.footer-item {
+	display: flex;
+	flex-direction: column;
+}
+.footer-link {
+	display: inline-block;
+	margin-top: 13px;
+	color: #fff;
+}
+.footer-icons-list {
+	display: flex;
+}
+.footer-icons-item {
+	padding-left: 4px;
+	padding-right: 4px;
+}
+@media (max-width: 1200px){
+	.footer-item {
+		flex-direction: row;
+	}
+	.footer-nav-list {
+		flex-direction: column;
+	}
+	.footer-nav-item {
+		padding-left: 0!important;
+		border-right: 1px solid rgba(255, 255, 255, 0.25);
+	}
+	.footer-link {
+		margin-left: 27px;
+		margin-top: 0;
+	}
+}
+@media (max-width: 768px){
+	.footer-nav-list {
+		display: none;
+	}
+	.footer-icons-list {
+		display: none;
+	}
+	.footer-item {
+		align-items: flex-end;
+		flex-basis: 100%;
+		justify-content: flex-end;
+	}
+	.footer-link {
+		margin-left: 0;
+		max-width: 180px;
+		text-align: right;
+	}
+}
+/* ********** Конец футера ********** */
