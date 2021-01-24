@@ -1,6 +1,5 @@
-//Прелоадер
 window.onload = function () {
-	console.log(123)
+	//Прелоадер
 	let preloader = document.querySelector('#preloader')
 	preloader.style.opacity = '0'
 	document.querySelector('html').classList.remove('overflowy')

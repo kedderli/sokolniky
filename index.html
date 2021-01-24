@@ -653,21 +653,20 @@
 						}
 						.circle .circle-small {
 							fill: #3C3973;
-							r: 10;
-							transition: r 0.4s;
+							transition: transform 0.4s;
 						}
 						.circle .circle-small-active {
-							r: 22.5;
+							transform: scale(2.2);
 						}
 						.circle .circle-big {
-							r: 0; 
 							fill: white; 
 							stroke: #3C3973; 
 							stroke-width: 2;
-							transition: r 0.3s;
+							transform: scale(0);
+							transition: transform 0.3s;
 						}
 						.circle .circle-big-active {
-							r: 27.5;
+							transform: scale(1);
 						}
 						.circle .circle-text {
 							font-size: 0px; 
@@ -732,43 +731,43 @@
 						</g>
 					</g>
 					<g class="circle">
-						<circle r="0" cx="730.5" cy="203.5" class="circle-big circle-big-active"/>
-						<circle r="0" cx="730.5" cy="203.5" r=10 fill="#3C3973" class="circle-small circle-small-active"/>
+						<circle transform-origin="730.5 203.5" r="27.5" cx="730.5" cy="203.5" class="circle-big circle-big-active"/>
+						<circle transform-origin="730.5 203.5" r="10" cx="730.5" cy="203.5" class="circle-small circle-small-active"/>
 						<text x="730.5" y="209.5" class="circle-text circle-text-active">F1</text>
 					</g>
 					<g class="circle">
-						<circle r="0" cx="588.5" cy="279.5" class="circle-big"/>
-						<circle r="0" cx="588.5" cy="279.5" class="circle-small"/>
+						<circle transform-origin="588.5 279.5" r="27.5" cx="588.5" cy="279.5" class="circle-big"/>
+						<circle transform-origin="588.5 279.5" r="10" cx="588.5" cy="279.5" class="circle-small"/>
 						<text x="588.5" y="285.5" class="circle-text">B2</text>
 					</g>
 					<g class="circle">
-						<circle r="0" cx="393" cy="195" class="circle-big"/>
-						<circle r="0" cx="393" cy="195" class="circle-small"/>
+						<circle transform-origin="393 195" r="27.5" cx="393" cy="195" class="circle-big"/>
+						<circle transform-origin="393 195" r="10" cx="393" cy="195" class="circle-small"/>
 						<text x="393" y="201" class="circle-text">B3</text>
 					</g>
 					<g class="circle">
-						<circle r="0" cx="314.5" cy="269" class="circle-big"/>
-						<circle r="0" cx="314.5" cy="269" class="circle-small"/>
+						<circle transform-origin="314.5 269" r="27.5" cx="314.5" cy="269" class="circle-big"/>
+						<circle transform-origin="314.5 269" r="10" cx="314.5" cy="269" class="circle-small"/>
 						<text x="314.5" y="275" class="circle-text">B4</text>
 					</g>
 					<g class="circle">
-						<circle r="0" cx="534" cy="175" class="circle-big"/>
-						<circle r="0" cx="534" cy="175" class="circle-small"/>
+						<circle transform-origin="534 175" r="27.5" cx="534" cy="175" class="circle-big"/>
+						<circle transform-origin="534 175" r="10" cx="534" cy="175" class="circle-small"/>
 						<text x="534" y="181" class="circle-text">B5</text>
 					</g>
 					<g class="circle">
-						<circle r="0" cx="621.5" cy="107" class="circle-big"/>
-						<circle r="0" cx="621.5" cy="107" class="circle-small"/>
+						<circle transform-origin="621.5 107" r="27.5" cx="621.5" cy="107" class="circle-big"/>
+						<circle transform-origin="621.5 107" r="10" cx="621.5" cy="107" class="circle-small"/>
 						<text x="621.5" y="113" class="circle-text">B6</text>
 					</g>
 					<g class="circle">
-						<circle r="0" cx="678" cy="437.5" class="circle-big"/>
-						<circle r="0" cx="678" cy="437.5" class="circle-small"/>
+						<circle transform-origin="678 437.5" r="27.5" cx="678" cy="437.5" class="circle-big"/>
+						<circle transform-origin="678 437.5" r="10" cx="678" cy="437.5" class="circle-small"/>
 						<text x="678" y="443.5" class="circle-text">B7</text>
 					</g>
 					<g class="circle">
-						<circle r="0" cx="451" cy="140.5" class="circle-big"/>
-						<circle r="0" cx="451" cy="140.5" class="circle-small"/>
+						<circle transform-origin="451 140.5" r="27.5" cx="451" cy="140.5" class="circle-big"/>
+						<circle transform-origin="451 140.5" r="10" cx="451" cy="140.5" class="circle-small"/>
 						<text x="451" y="146.5" class="circle-text">B8</text>
 					</g>
 					<defs>
