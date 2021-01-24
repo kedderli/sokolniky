@@ -159,7 +159,6 @@ $('#context .section-card-list').slick({
 			responsive: [
 				{
 					breakpoint: 1200,
-					arrows: true,
 					settings: {
 						slidesToShow: 2,
 						slidesToScroll: 1,
@@ -167,7 +166,6 @@ $('#context .section-card-list').slick({
 				},
 				{
 					breakpoint: 768,
-					arrows: true,
 					settings: {
 						slidesToShow: 1,
 						slidesToScroll: 1,
@@ -220,7 +218,17 @@ $('.map-card-list').slick({
 			fade: true,
 			speed: 500,
 			slidesToShow: 1,
-			slidesToScroll: 1,	
+			slidesToScroll: 1,
+			appendArrows: $('.map-arrows-wrapper'),
+			prevArrow: '<button type = "button" class = "map-prev"><img src="assets/image/icons/prev.png"></button>',
+	 		nextArrow: '<button type = "button" class = "map-next"><img src="assets/image/icons/next.png"></button>',
+			responsive: [
+				{
+					breakpoint: 1200,
+					settings: {
+						arrows: true,
+					}
+				}]
 		});
 
 const mapSliderDots = document.querySelectorAll('.map-card-list .slick-dots li')

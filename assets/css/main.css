@@ -28,6 +28,7 @@ a {
 }
 .section {
 	position: relative;
+	overflow: hidden;
 	padding-top: 40px;
 	padding-bottom: 40px;
 }
@@ -82,8 +83,130 @@ a {
 		font-size: 46px;
 		display: block;
 	}
-
 }
+@media (max-width: 1200px){
+	.bg-hide {
+		display: none;
+	}
+}
+@media (max-width: 1440px){
+	.lg-hide {
+		display: none;
+	}
+}
+
+.pos-rel {
+	position: relative;
+}
+.picture-01 {
+	position: absolute;
+	transform: translateY(-50%);
+	top: 0;
+	left: 5.7%;
+}
+.picture-02 {
+	position: absolute;
+	transform: translateY(50%);
+	left: 12.73%;
+	bottom: 0;
+}
+.picture-03 {
+	position: absolute;
+	transform: translateY(-50%) rotate(38.3deg);
+	top: 0;
+	right: 9.33%;
+}
+.picture-04 {
+	position: absolute;
+	transform: translateY(50%) rotate(-180deg);
+	bottom: 0;
+	right: 8.2%;
+}
+.picture-05 {
+	position: absolute;
+	transform: translateY(-50%);
+	top: 50%;
+	left: 22.23%;
+}
+.picture-06 {
+	position: absolute;
+	transform: translateY(50%);
+	top: 40%;
+	right: 19.63%;
+}
+.picture-07 {
+	position: absolute;
+	transform: translateY(0%) translateX(-35%);
+	top: 50%;
+	left: 0;
+}
+.picture-08 {
+	position: absolute;
+	transform: translateY(-40%) translateX(35%);
+	top: 50%;
+	right: 0;
+}
+.picture-09 {
+	position: absolute;
+	transform: translateY(50%) rotate(-145deg);
+	bottom: 0px;
+	left: 14.82%;
+}
+.picture-10 {
+	position: absolute;
+	transform: translateY(50%) rotate(0.12deg);
+	bottom: 0px;
+	right: 9.01%;
+}
+.picture-11 {
+	position: absolute;
+	transform: translateY(-50%) rotate(38.3deg);
+	top: 0px;
+	right: 51.36%;
+}
+.picture-12 {
+	position: absolute;
+	transform: translateY(50%);
+	left: 58.24%;
+}
+.picture-13 {
+	position: absolute;
+	transform: translateY(45%) translateX(-35%);
+	top: 50%;
+	left: 0;
+}
+.picture-14 {
+	position: absolute;
+	transform: translateX(30%);
+	top: 0;
+	right: 0;
+}
+.picture-15 {
+	position: absolute;
+	transform: translateY(-50%) rotate(-19.15deg);
+	top: 0;
+	right: 8.55%;
+}
+.picture-16 {
+	position: absolute;
+	transform: translateY(30%) rotate(38.3deg);
+	bottom: 0;
+	right: 5.34%;
+}
+.picture-17 {
+	position: absolute;
+	transform: translateY(100%);
+	top: 0;
+	right: 43.1%;
+}
+.picture-18 {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;	
+}
+
+
 
 /* ********** Начало CONTAINER ********** */
 
@@ -306,17 +429,18 @@ a {
 		position: absolute;
 		overflow-y: hidden;
 		position: fixed;
-		height: 0px;
+		height: 100%;
+		max-height: 0px;
 		top: 100px;
 		left: 0;
 		right: 0;
 		box-sizing: border-box;
 		flex-direction: column;
 		background-color: #F6F6F6;
-		transition: height 0.5s; 
+		transition: max-height 0.5s; 
 	}
 	.header-nav-show {
-		height: calc(100vh - 100px);
+		max-height: calc(100vh - 100px);
 	}
 	.header-nav-item:first-child {
 		padding-top: 30px;
@@ -374,6 +498,7 @@ a {
 /* ********** Начало ФОТОГРАФИЙ ********** */
 .foto-section-wrapper {
 	position: relative;
+	overflow: hidden;
 }
 .foto-tab-list {
 	height: 82px;
@@ -579,6 +704,7 @@ a {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
 }
 .section-card-list {
 	overflow: hidden;
@@ -708,7 +834,6 @@ a {
 }
 .map-card-item {
 	outline: none;
-	margin-top: 30px;
 	max-width: 352px;
 	background: #FFFFFF;
 	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
@@ -767,8 +892,42 @@ a {
 	top: 0;
 	height: 100%;
 }
+.section-map .section-title {
+	position: relative;
+	z-index: 2;
+	margin-top: 45px;
+}	
 .map-card-list .slick-dots {
 	display: none!important;
+}
+.map-arrows-wrapper {
+	position: absolute;
+	width: 100%;
+	top: 50px;
+	z-index: 2;
+}
+.map-prev,
+.map-next {
+	outline: none;
+	position: absolute;
+	border: none;
+	background-color: #C5DA9A;
+	width: 32px;
+	height: 32px;
+	border-radius: 50px;
+}
+.map-prev {
+	left: 20px;
+}
+.map-next {
+	right: 20px;
+}
+.map-prev img,
+.map-next img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 @media (max-width: 2100px){
 	.map-wrapper {
@@ -783,9 +942,6 @@ a {
 @media (max-width: 1200px){
 	.section-map {
 		min-height: 1px;
-	}
-	.section-map .section-title {
-		margin-top: 45px;
 	}
 	.map-section-wrapper .container {
 		max-width: 100%;
@@ -805,17 +961,37 @@ a {
 		width: 100%;
 	}
 	.map-card-item {
+		margin-top: 30px;
 		max-width: 100%;
 		height: 100%;
 		border-radius: 0;
+	}
+	.map-card-header {
+		padding-left: 100px;
+		padding-right: 100px;
 	}
 	.map-card-content {
 		max-height: 100%;
 	}
 	.map-wrapper {
 		position: relative;
+		width: 100vw;
 		transform: none;
 		transform: scale(1.05) translateX(5%);
+	}
+}
+@media (max-width: 768px){
+	.map-card-title {
+		width: 100%;
+		text-align: center;
+		font-size: 34px;
+	}
+	.map-slide-index-wrapper {
+		display: none;
+	}
+	.map-card-header {
+		padding-left: 53px;
+		padding-right: 53px;
 	}
 }
 /* ********** Конец карты ********** */
@@ -916,6 +1092,7 @@ a {
 }
 .form-button {
 	position: absolute;
+	cursor: pointer;
 	right: 8px;
 	top: 50%;
 	transform: translateY(-50%);
