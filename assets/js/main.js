@@ -1,3 +1,4 @@
+console.log(111)
 $( document ).ready(function () {
 	//Прелоадер
 	let preloader = document.querySelector('#preloader')
@@ -45,6 +46,10 @@ const navToggle = document.querySelector('#nav-toggle');
 const navList = document.querySelector('#nav-list');
 
 	navToggle.onclick = function (){
+		window.scrollTo({
+		    top: 0,
+		    behavior: "smooth"
+		});
 		navToggle.classList.toggle('header-nav-button-active');
 		navList.classList.toggle('header-nav-show');
 		document.querySelector('body').classList.toggle('overflowy')

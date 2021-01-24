@@ -853,6 +853,7 @@ a {
 }
 .foto-section-wrapper .slick-disabled {
 	opacity: .3;
+	cursor: auto;
 }
 .foto-slider-list .slick-dots {
 	display: none!important;
@@ -1350,6 +1351,10 @@ a {
 	    -ms-transform: translate(-50%, -50%);
 	     -o-transform: translate(-50%, -50%);
 	        transform: translate(-50%, -50%);
+}
+.map-arrows-wrapper .slick-disabled {
+	opacity: 0.3;
+	cursor: auto;
 }
 @media (max-width: 2100px){
 	.map-wrapper {
