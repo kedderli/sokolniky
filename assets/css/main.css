@@ -239,38 +239,6 @@ a {
 /* ********** Конец CONTAINER ********** */
 
 /* -------- Начало прелоадера ---------- */
-@-webkit-keyframes preloaderhead {
-  0% {
-    -webkit-transform: translateX(-100vh);
-            transform: translateX(-100vh);
-  }
-  85% {
-  	-webkit-transform: translateX(2vh);
-            transform: translateX(2vh);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-@keyframes preloaderhead {
-  0% {
-    -webkit-transform: translateX(-100vh);
-            transform: translateX(-100vh);
-  }
-  75% {
-  	-webkit-transform: translateX(4vh);
-            transform: translateX(4vh);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-.header-bottom {
-	-webkit-animation: preloaderhead 0.7s ease-in-out;
-          animation: preloaderhead 0.7s ease-in-out;
-}
 .preloader {
 	background: #3C3973;
 	position: fixed;
@@ -665,7 +633,7 @@ a {
 .foto-tab-list .slick-list {
 	overflow-x: hidden;
 	overflow-y: visible!important;
-	height: 100%;
+	height: calc(100% + 5px);
 }
 @media (max-width: 1200px){
 	.foto-tab-list {
