@@ -83,7 +83,8 @@ a {
 }
 .anchor {
 	position: absolute;
-	top: -100px;
+	top: 0px;
+	transform: translateY(-100px);
 	height: 100%;
 	width: 100%;
 }
@@ -1779,6 +1780,7 @@ a {
 
 /* ********** Начало страницы 404 ********** */
 .err-section {
+	margin-top: 100px;
 	min-height: calc(100vh - 239px);
 	box-sizing: border-box;
 }
