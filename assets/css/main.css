@@ -1854,5 +1854,191 @@ a {
 /* ********** Начало Статьи ********** */
 .article-head {
 	padding-top: 100px;
+	padding-bottom: 50px;
+	position: relative;
+}
+.article-tag {
+	display: inline-block;
+	padding-top: 2px;
+	padding-right: 32px;
+	padding-bottom: 5px;
+	border-radius: 0px 0px 5px 0px;
+	font-family: Roboto Slab;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+}
+.article-title {
+	margin-top: 70px;
+	margin-bottom: 37px;
+	font-family: Amatic SC;
+	font-weight: bold;
+	font-size: 58px;
+	line-height: 73px;
+	text-transform: uppercase;
+	color: #3C3973;
+	max-width: 440px;
+}
+.articel-description {
+	display: flex;
+}
+.article-date {
+	font-family: Roboto Slab;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 28px;
+	color: #8D8D8D;
+	padding-right: 28px;
+	border-right: 1px solid #8D8D8D;
+}
+.article-author-name {
+	padding-left: 28px;
+	font-family: Roboto Slab;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 28px;
+	color: #3C3973;
+}
+.article-image {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	max-width: 700px;
+}
+.article-image img {
+	display: block;
+}
+.article-picture-1 {
+	position: absolute;
+	top: 100px;
+	right: 7%;
+}
+.article-body {
+	position: relative;
+	padding-top: 47px;
+	padding-bottom: 47px;
+}
+.article-body-wrapper {
+	max-width: 65%;
+}
+.article-body-title {
+	font-family: Roboto Slab;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 32px;
+	color: #3C3973;
+	position: relative;
+	z-index: 2;
+}
+.article-body-description,
+.article-body-text {
+	font-family: Roboto Slab;
+	font-size: 16px;
+	line-height: 28px;
+	color: #000000;
+	position: relative;
+	z-index: 2;
+}
+.article-body-description {
+	font-weight: bold;
+}
+.article-body-source,
+.article-body-source a {
+	font-family: Roboto Slab;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 28px;
+	color: #8D8D8D;
+	position: relative;
+	z-index: 2;
+}
+.article-body-source a:hover {
+	text-decoration: underline;
+}
+.article-body-image {
+	position: absolute;
+	right: 0;
+	top: 100px;
+	text-align: right;
+}
+.article-body-image-wrapper {
+	height: 400px;
+}
+.article-body-image-descriprion {
+	text-align: right;
+	max-width: 176px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+@media (max-width: 1440px){
+	.article-body-image-wrapper img {
+		width: 80%;		
+	}
+}
+@media (max-width: 1200px){
+	.article-body-image-wrapper img {
+		width: 60%;		
+	}
+	.article-body-image-descriprion {
+		left: 70%;
+	}
+	.article-picture-1 {
+		display: none;
+	}
+	.article-head {
+		padding-bottom: 0;
+	}
+	.article-image {
+		position: relative;
+		width: 100%;
+		max-width:100%;
+	}
+	.article-image img {
+		margin-left: auto;
+	}
+	.article-title {
+		max-width: 100%;
+		text-align: center;
+	}
+	.articel-description {
+		flex-direction: column;
+		text-align: center;
+	}
+	.article-date {
+		padding-right: 0;
+		border: none;
+	}
+	.article-author-name {
+		padding-left: 0;
+	}
+}
+@media (max-width: 768px){
+	.article-image img {
+		width: 100%;
+	}
+}
+@media (max-width: 992px){
+	.article-body-image {
+		position: relative;
+		top: 0;
+		margin-right: 0;
+		margin-left: auto;
+		max-width: 100%;
+	}
+	.article-body-wrapper {
+		max-width: 100%;
+	}
+	.article-body-image-wrapper {
+		height: auto;
+	}
+	.article-body-image-wrapper img {
+		width: 90%;
+	}
+	.article-body-image-descriprion {
+		text-align: left;
+		left: 0;
+		transform: none;
+		padding-left: 15px;
+	}
 }
 /* ********** Конец Статьи ********** */
