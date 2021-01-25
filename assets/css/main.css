@@ -66,6 +66,17 @@ a {
 	        border-radius: 5px;
 	background-color: #3C3973;
 	display: inline-block;
+	-webkit-transition: transform 0.3s;
+	-o-transition: transform 0.3s;
+	-moz-transition: transform 0.3s;
+	transition: transform 0.3s;
+}
+.button:hover {
+	-webkit-transform: translateY(-5px);
+	   -moz-transform: translateY(-5px);
+	    -ms-transform: translateY(-5px);
+	     -o-transform: translateY(-5px);
+	        transform: translateY(-5px);
 }
 .text-center {
 	text-align: center;
@@ -407,7 +418,7 @@ a {
 /* ********** Начало HEADER ********** */
 .header {
 	position: relative;
-	z-index: 1;
+	z-index: 150;
 	-webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
 	   -moz-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
 	        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
@@ -665,7 +676,6 @@ a {
 		display: block;
 	}
 	.header-nav-list {
-		position: absolute;
 		overflow-y: hidden;
 		position: fixed;
 		height: 100%;
@@ -1580,6 +1590,13 @@ a {
 	outline: none;
 	border: none;
 }
+.form-button:hover {
+	-webkit-transform: translateY(-50%);
+	   -moz-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	     -o-transform: translateY(-50%);
+	        transform: translateY(-50%);
+} 
 .form-text {
 	font-family: Roboto Slab;
 	font-weight: normal;
@@ -1735,3 +1752,65 @@ a {
 	}
 }
 /* ********** Конец футера ********** */
+
+
+
+/* ********** Начало страницы 404 ********** */
+.err-section {
+	min-height: calc(100vh - 239px);
+	box-sizing: border-box;
+}
+.err-wrapper {
+	position: relative;
+	z-index: 2;
+	max-width: 520px;
+}
+.err-title {
+	font-family: Amatic SC;
+	font-weight: bold;
+	font-size: 120px;
+	line-height: 151px;
+	text-transform: uppercase;
+	color: #3C3973;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.err-text {
+	font-family: Roboto Slab;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 32px;
+	color: #000000;
+}
+.err-image {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 100%;
+	max-height: 500px;
+	transform: translateX(100px);
+}
+@media (max-width: 1000px){
+	.err-section {
+		padding-bottom: 0;
+	}
+	.err-wrapper {
+		text-align: center;
+		max-width: 100%;
+	}
+	.err-title { 
+		font-size: 70px;
+	}
+	.err-text {
+		font-size: 14px;
+	}
+	.err-image {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		right: 50%;
+		transform: translateX(55%);
+	}
+}
+/* ********** Конец страницы 404 ********** */
