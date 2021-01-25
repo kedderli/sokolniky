@@ -1371,10 +1371,10 @@ a {
 	        border-radius: 50px;
 }
 .map-prev {
-	left: 20px;
+	left: 15px;
 }
 .map-next {
-	right: 20px;
+	right: 15px;
 }
 .map-prev img,
 .map-next img{
@@ -1444,6 +1444,9 @@ a {
 	}
 	.map-card-content {
 		max-height: 100%;
+		text-align: center;
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 	.map-wrapper {
 		position: relative;
