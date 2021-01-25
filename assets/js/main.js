@@ -56,6 +56,9 @@ $( document ).ready(function () {
 
 	// //Подсветка пунктов меню
 	$(function($) {
+		if ($(this).scrollTop() > 0) {
+			window.scrollBy(0, -50)
+		}
 	    const section = $('.anchor'),
 	          nav = $('.header-nav-list')
 	          headerTop = document.querySelector('.header-top-flexbox')
@@ -78,7 +81,6 @@ $( document ).ready(function () {
 	        section.each(function () {
 	            const top = $(this).offset().top - 5,
 	                  bottom = top + $(this).outerHeight();
-
 	            if (position >= top && position <= bottom) {
 	                nav.find('a').removeClass('active');
 	                section.removeClass('active');
@@ -95,7 +97,7 @@ $( document ).ready(function () {
 			if (document.location.pathname === currentPage) {
 				e.preventDefault();
 		    	$('html, body').stop().animate({
-		        	scrollTop: $(anchor).offset().top + 50
+		        	scrollTop: $(anchor).offset().top
 		    	}, 400);	
 			}
 		});
