@@ -10,9 +10,9 @@ $( document ).ready(function () {
 
 	//Адаптивная высота слайдов истории и котекста
 	const fotoCardAll2 = document.querySelectorAll('#context-section .section-card-item')
-	let fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map(function(line) {line.clientHeight}))))
+	let fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map(function(line) { return line.clientHeight }))))
 	const fotoCardAll = document.querySelectorAll('#story-section .section-card-item')
-	let fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map(function (line) {line.clientHeight}))))
+	let fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map(function (line) { return line.clientHeight }))))
 
 	fotoCardAll2.forEach(function (item) {
 		item.style.height = fotoCardMaxHeight2 + 'px'
@@ -25,7 +25,7 @@ $( document ).ready(function () {
 		fotoCardAll2.forEach(function (item) {
 			item.style.height = 100 + '%'
 		})
-		fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map(function (line) {line.clientHeight}))))
+		fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map(function (line) { return line.clientHeight }))))
 		fotoCardAll2.forEach(function (item) {
 			item.style.height = fotoCardMaxHeight2 + 'px'
 		})
@@ -33,7 +33,7 @@ $( document ).ready(function () {
 		fotoCardAll.forEach(function (item) {
 			item.style.height = 100 + '%'
 		})
-		fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map(function (line) {line.clientHeight}))))
+		fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map(function (line) { return line.clientHeight }))))
 		fotoCardAll.forEach(function (item) {
 			item.style.height = fotoCardMaxHeight + 'px'
 		})
@@ -74,7 +74,6 @@ const navList = document.querySelector('#nav-list');
 			document.querySelector('html').classList.toggle('overflowy')
 		}
 	}
-
 
 // Инициализация слайдера фото
 $('.foto-slider-list').slick({
