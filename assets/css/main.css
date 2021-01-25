@@ -6,6 +6,7 @@ html, body {
 }
 p {
 	margin-top: 0;
+	font-size: 16px;
 	margin-bottom: 0;
 }
 p:not(:last-child) {
@@ -44,14 +45,12 @@ a {
 .slide-title {
 	font-family: Roboto Slab;
 	font-weight: bold;
-	font-size: 16px;
 	line-height: 28px;
 	color: #3C3973;
 }
 .slide-text {
 	font-family: Roboto Slab;
 	font-weight: normal;
-	font-size: 16px;
 	line-height: 28px;
 }
 .button {
@@ -91,6 +90,9 @@ a {
 	display: none;
 }
 @media (max-width: 768px){
+	p {
+		font-size: 14px;
+	}
 	.md-hide {
 		display: none;
 	}
@@ -835,14 +837,12 @@ a {
 .foto-slide-title {
 	font-family: Roboto Slab;
 	font-weight: bold;
-	font-size: 16px;
 	line-height: 28px;
 	color: #3C3973;
 }
 .foto-slide-text {
 	font-family: Roboto Slab;
 	font-weight: normal;
-	font-size: 16px;
 	line-height: 28px;
 }
 .foto-slider-foto {
@@ -1331,7 +1331,6 @@ a {
 	overflow-y: auto;
 	font-family: Roboto Slab;
 	font-weight: normal;
-	font-size: 16px;
 	line-height: 28px;
 }
 .map-card-worktime {
@@ -1961,7 +1960,6 @@ a {
 .article-body-description,
 .article-body-text {
 	font-family: Roboto Slab;
-	font-size: 16px;
 	line-height: 28px;
 	color: #000000;
 	position: relative;
