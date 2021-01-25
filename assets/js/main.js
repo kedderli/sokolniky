@@ -48,10 +48,18 @@ $( document ).ready(function () {
 				headerTop.style.maxHeight = '50px'
 				headerNavList.classList.add('header-nav-list-up')
 				headerTopLogo.style.paddingBottom = '6px'
+				if (window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1) {
+					headerTopLogo.style.height = '50%'
+					headerNavList.style.height = '50%' 
+				}
 			} else {
 				headerTop.style.maxHeight = '100px'
 				headerNavList.classList.remove('header-nav-list-up')
 				headerTopLogo.style.paddingBottom = '20px'
+				if (window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1) {
+					headerTopLogo.style.height = '100%'
+					headerNavList.style.height = '100%'
+				}
 			}
 			if (document.location.pathname === '/sokolniky/') {
 				section.each(function () {
@@ -71,9 +79,9 @@ $( document ).ready(function () {
 	//запускается только на главной
 	if (document.location.pathname === '/sokolniky/') {
 		//Адаптивная высота слайдов истории и котекста
-		const fotoCardAll2 = document.querySelectorAll('#context-section .section-card-item')
+		const fotoCardAll2 = Array.prototype.slice.call(document.querySelectorAll('#context-section .section-card-item'))
 		let fotoCardMaxHeight2 = (Math.max.apply(null, (Array.prototype.slice.call(fotoCardAll2).map(function(line) { return line.clientHeight }))))
-		const fotoCardAll = document.querySelectorAll('#story-section .section-card-item')
+		const fotoCardAll = Array.prototype.slice.call(document.querySelectorAll('#story-section .section-card-item'))
 		let fotoCardMaxHeight = (Math.max.apply(null, (Array.prototype.slice.call(fotoCardAll).map(function (line) { return line.clientHeight }))))
 
 		if (fotoCardMaxHeight < 266) {
@@ -82,7 +90,7 @@ $( document ).ready(function () {
 		if (fotoCardMaxHeight2 < 266) {
 			fotoCardMaxHeight2 = 266
 		}
-
+		console.log(fotoCardAll2)
 		fotoCardAll2.forEach(function (item) {
 			item.style.height = fotoCardMaxHeight2 + 'px'
 		})
