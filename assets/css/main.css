@@ -1931,6 +1931,16 @@ a {
 	top: 100px;
 	right: 7%;
 }
+.article-picture-2 {
+	position: absolute;
+	left: 0;
+	top: 100px;
+}
+.article-picture-3 {
+	position: absolute;
+	right: 0;
+	top: 46%;
+}
 .article-body {
 	position: relative;
 	padding-top: 47px;
@@ -1998,6 +2008,10 @@ a {
 	}
 }
 @media (max-width: 1200px){
+	.article-picture-2,
+	.article-picture-3 {
+		display: none;
+	}
 	.article-body-image-wrapper img {
 		width: 60%;		
 	}
@@ -2071,6 +2085,7 @@ a {
 		     -o-transform: none;
 		        transform: none;
 		padding-left: 15px;
+		margin-bottom: 30px;
 	}
 }
 .category-left {
