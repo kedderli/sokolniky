@@ -45,7 +45,7 @@ $( document ).ready(function () {
 	    var anchor = $(this).attr('href');
 	    $('html, body').stop().animate({
 	        scrollTop: $(anchor).offset().top
-	    }, 800);
+	    }, 400);
 	});
 })
 
@@ -273,7 +273,7 @@ const mapDotsChange = function (ind) {
 		circleList[ind].childNodes[3].classList.toggle('circle-small-active')
 		circleList[ind].childNodes[5].classList.toggle('circle-text-active')
 
-		mapSliderDots[ind].click()
+		mapSlider.slick('slickGoTo', ind)
 
 		circleActicve = ind
 	} else {
@@ -285,7 +285,7 @@ const mapDotsChange = function (ind) {
 		circleList[ind].childNodes[3].setAttribute("r", "22.5")
 		circleList[ind].childNodes[5].setAttribute("class", "circle-text circle-text-active")
 
-		mapSliderDots[ind].click()
+		mapSlider.slick('slickGoTo', ind)
 
 		circleActicve = ind
 	}	
@@ -302,8 +302,21 @@ for (let i = 0; i < circleList.length; i++) {
 
 mapSlider.on('afterChange', function () {
 	let currentMapSlide = mapSlider.slick('slickCurrentSlide')
-	mapDotsChange(currentMapSlide)
-	circleActicve = currentMapSlide
+	if (circleList[1].childNodes[1].classList) {
+		circleList[circleActicve].childNodes[1].classList.toggle('circle-big-active')
+		circleList[circleActicve].childNodes[3].classList.toggle('circle-small-active')
+		circleList[circleActicve].childNodes[5].classList.toggle('circle-text-active')
+		circleList[currentMapSlide].childNodes[1].classList.toggle('circle-big-active')
+		circleList[currentMapSlide].childNodes[3].classList.toggle('circle-small-active')
+		circleList[currentMapSlide].childNodes[5].classList.toggle('circle-text-active')
+	} else {
+		circleList[circleActicve].childNodes[1].setAttribute("r", "0")
+		circleList[circleActicve].childNodes[3].setAttribute("r", "10")
+		circleList[circleActicve].childNodes[5].setAttribute("class", "circle-text")
+		circleList[currentMapSlide].childNodes[1].setAttribute("r", "27.5")
+		circleList[currentMapSlide].childNodes[3].setAttribute("r", "22.5")
+		circleList[currentMapSlide].childNodes[5].setAttribute("class", "circle-text circle-text-active")
+	}
 	
 })
 
