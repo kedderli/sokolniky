@@ -33,6 +33,9 @@ $( document ).ready(function () {
 			item.style.height = 100 + '%'
 		})
 		fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map(function (line) { return line.clientHeight }))))
+		if (fotoCardMaxHeight2 < 266) {
+			fotoCardMaxHeight2 = 266
+		}
 		fotoCardAll2.forEach(function (item) {
 			item.style.height = fotoCardMaxHeight2 + 'px'
 		})
@@ -41,6 +44,9 @@ $( document ).ready(function () {
 			item.style.height = 100 + '%'
 		})
 		fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map(function (line) { return line.clientHeight }))))
+		if (fotoCardMaxHeight < 266) {
+			fotoCardMaxHeight = 266
+		}
 		fotoCardAll.forEach(function (item) {
 			item.style.height = fotoCardMaxHeight + 'px'
 		})
