@@ -46,17 +46,6 @@ $( document ).ready(function () {
 		})
 	})
 
-	// скролл по якорям
-	$("a.scroll-to").on("click", function(e){
-		const anchor = '#' + $(this).attr('href').split('#')[1];
-		const currentPage = '/sokolniky/' // Заменить на / на релизе
-		if (document.location.pathname === currentPage) {
-			e.preventDefault();
-	    	$('html, body').stop().animate({
-	        	scrollTop: $(anchor).offset().top
-	    	}, 400);	
-		}
-	});
 
 
 	// //Подсветка пунктов меню
@@ -92,6 +81,22 @@ $( document ).ready(function () {
 	            }
 	        });
 	    });
+
+	    // скролл по якорям
+		$("a.scroll-to").on("click", function(e){
+			let padingScroll = 100
+			if (headerTop.style.maxHeight === '50px') {
+				padingScroll = 50
+			}
+			const anchor = '#' + $(this).attr('href').split('#')[1];
+			const currentPage = '/sokolniky/' // Заменить на / на релизе
+			if (document.location.pathname === currentPage) {
+				e.preventDefault();
+		    	$('html, body').stop().animate({
+		        	scrollTop: $(anchor).offset().top - padingScroll
+		    	}, 400);	
+			}
+		});
 	});
 })
 
