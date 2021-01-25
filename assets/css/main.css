@@ -543,6 +543,10 @@ a {
 .header-top-icons-item:not(:last-child) {
 	margin-right: 8px;
 }
+.header-bottom-wrapper {
+	position: relative;
+	display: flex;
+}
 .header-bottom {
 	padding-top: 100px;
 	position: relative;
@@ -568,9 +572,9 @@ a {
 	        transform: translateY(-100%);
 }
 .header-bottom-foto {
-	position: absolute;
+	position: relative;
 	bottom: 0;
-	right: -50px;
+	right: -250px;
 }
 /* start nav toggle */
 .header-nav-button {
@@ -759,13 +763,16 @@ a {
 		    -ms-flex-pack: center;
 		        justify-content: center;
 	}
+	.header-bottom-foto {
+		right: 0;
+	}
 }
 @media (max-width: 992px){
 	.header-bottom-picture {
 		display: none;
 	}
 	.header-bottom-foto {
-		right: -300px;
+		right: 100px;
 	}
 }
 @media (max-width: 768px){
@@ -777,6 +784,9 @@ a {
 		    -ms-transform: translateX(-50%);
 		     -o-transform: translateX(-50%);
 		        transform: translateX(-50%);
+	}
+	.header-bottom-wrapper {
+		flex-direction: column;
 	}
 	.header-bottom-foto {
 		position: relative;
