@@ -309,6 +309,7 @@ mapSlider.on('afterChange', function () {
 		circleList[currentMapSlide].childNodes[1].classList.toggle('circle-big-active')
 		circleList[currentMapSlide].childNodes[3].classList.toggle('circle-small-active')
 		circleList[currentMapSlide].childNodes[5].classList.toggle('circle-text-active')
+		circleActicve = currentMapSlide
 	} else {
 		circleList[circleActicve].childNodes[1].setAttribute("r", "0")
 		circleList[circleActicve].childNodes[3].setAttribute("r", "10")
@@ -316,6 +317,7 @@ mapSlider.on('afterChange', function () {
 		circleList[currentMapSlide].childNodes[1].setAttribute("r", "27.5")
 		circleList[currentMapSlide].childNodes[3].setAttribute("r", "22.5")
 		circleList[currentMapSlide].childNodes[5].setAttribute("class", "circle-text circle-text-active")
+		circleActicve = currentMapSlide
 	}
 	
 })
