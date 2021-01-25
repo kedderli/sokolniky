@@ -553,7 +553,7 @@ a {
 .header-bottom-picture:first-child {
 	position: absolute;
 	left: 35%;
-	top: -25px;
+	top: 75px;
 }
 .header-bottom-picture:last-child {
 	position: absolute;
@@ -1850,3 +1850,9 @@ a {
 	}
 }
 /* ********** Конец страницы 404 ********** */
+
+/* ********** Начало Статьи ********** */
+.article-head {
+	padding-top: 100px;
+}
+/* ********** Конец Статьи ********** */
