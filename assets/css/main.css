@@ -573,6 +573,7 @@ a {
 }
 .header-bottom-foto {
 	position: relative;
+	display: block;
 	bottom: 0;
 	right: -250px;
 }
