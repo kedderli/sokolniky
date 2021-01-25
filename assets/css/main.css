@@ -84,6 +84,8 @@ a {
 .anchor {
 	position: absolute;
 	top: -100px;
+	height: 100%;
+	width: 100%;
 }
 .md-show {
 	display: none;
@@ -514,7 +516,8 @@ a {
 	-moz-transition: width 0.3s;
 	transition: width 0.3s;
 }
-.header-nav-item:hover .header-nav-link-text:after {
+.header-nav-item:hover .header-nav-link-text:after,
+.header-nav-item .active .header-nav-link-text:after {
 	width: 100%;
 }
 .header-top-icons-list {

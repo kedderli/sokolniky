@@ -57,6 +57,46 @@ $( document ).ready(function () {
 	    	}, 400);	
 		}
 	});
+
+
+	//Подсветка пунктов меню
+	$(function($) {
+	    const section = $('.anchor'),
+	          nav = $('.header-nav-list')
+	          headerTop = document.querySelector('.header-top-flexbox')
+	    $(window).on('scroll', function () {
+	        const position = $(this).scrollTop();
+
+	        if (position > 150) {
+	    		headerTop.style.maxHeight = '50px'
+	    	} else {
+	    		headerTop.style.maxHeight = '100px'
+	    	}
+
+	        section.each(function () {
+	            const top = $(this).offset().top - 5,
+	                  bottom = top + $(this).outerHeight();
+
+	            if (position >= top && position <= bottom) {
+	                nav.find('a').removeClass('active');
+	                section.removeClass('active');
+	                $(this).addClass('active');
+	                nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
+	            }
+	        });
+	    });
+
+	    nav.find('a').on('click', function () {
+	        const id = $(this).attr('href');
+
+	        $('html, body').animate({
+	            scrollTop: $(id).offset().top
+	        }, 487);
+
+	        return false;
+	    });
+
+	});
 })
 
 // Кнопка разворачивания меню
