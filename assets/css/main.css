@@ -2041,4 +2041,31 @@ a {
 		padding-left: 15px;
 	}
 }
+.category-left {
+	position: absolute;
+	left: 0;
+	top: 100px;
+	height: 27px;
+	width: calc(calc(100% - 1140px)/2);
+}
+@media (max-width: 1200px){
+	.category-left {
+		width: calc(calc(100% - 960px)/2);
+	}
+}
+@media (max-width: 992px){
+	.category-left {
+		width: calc(calc(100% - 720px)/2);
+	}
+}
+@media (max-width: 768px){
+	.category-left {
+		width: calc(calc(100% - 540px)/2);
+	}
+}
+@media (max-width: 576px){
+	.category-left {
+		width: 15px;
+	}
+}
 /* ********** Конец Статьи ********** */
