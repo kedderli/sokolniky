@@ -72,9 +72,9 @@ $( document ).ready(function () {
 	if (document.location.pathname === '/sokolniky/') {
 		//Адаптивная высота слайдов истории и котекста
 		const fotoCardAll2 = document.querySelectorAll('#context-section .section-card-item')
-		let fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map(function(line) { return line.clientHeight }))))
+		let fotoCardMaxHeight2 = (Math.max.apply(null, (Array.prototype.slice.call(fotoCardAll2).map(function(line) { return line.clientHeight }))))
 		const fotoCardAll = document.querySelectorAll('#story-section .section-card-item')
-		let fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map(function (line) { return line.clientHeight }))))
+		let fotoCardMaxHeight = (Math.max.apply(null, (Array.prototype.slice.call(fotoCardAll).map(function (line) { return line.clientHeight }))))
 
 		if (fotoCardMaxHeight < 266) {
 			fotoCardMaxHeight = 266
@@ -94,7 +94,7 @@ $( document ).ready(function () {
 			fotoCardAll2.forEach(function (item) {
 				item.style.height = 100 + '%'
 			})
-			fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map(function (line) { return line.clientHeight }))))
+			fotoCardMaxHeight2 = (Math.max.apply(null, (Array.prototype.slice.call(fotoCardAll2).map(function (line) { return line.clientHeight }))))
 			if (fotoCardMaxHeight2 < 266) {
 				fotoCardMaxHeight2 = 266
 			}
@@ -105,7 +105,7 @@ $( document ).ready(function () {
 			fotoCardAll.forEach(function (item) {
 				item.style.height = 100 + '%'
 			})
-			fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map(function (line) { return line.clientHeight }))))
+			fotoCardMaxHeight = (Math.max.apply(null, (Array.prototype.slice.call(fotoCardAll).map(function (line) { return line.clientHeight }))))
 			if (fotoCardMaxHeight < 266) {
 				fotoCardMaxHeight = 266
 			}
