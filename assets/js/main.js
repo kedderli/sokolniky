@@ -14,6 +14,13 @@ $( document ).ready(function () {
 	const fotoCardAll = document.querySelectorAll('#story-section .section-card-item')
 	let fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map(function (line) { return line.clientHeight }))))
 
+	if (fotoCardMaxHeight < 266) {
+		fotoCardMaxHeight = 266
+	}
+	if (fotoCardMaxHeight2 < 266) {
+		fotoCardMaxHeight2 = 266
+	}
+
 	fotoCardAll2.forEach(function (item) {
 		item.style.height = fotoCardMaxHeight2 + 'px'
 	})
@@ -57,10 +64,6 @@ const navToggle = document.querySelector('#nav-toggle');
 const navList = document.querySelector('#nav-list');
 
 	navToggle.onclick = function (){
-		window.scrollTo({
-		    top: 0,
-		    behavior: "smooth"
-		});
 		navToggle.classList.toggle('header-nav-button-active');
 		navList.classList.toggle('header-nav-show');
 		document.querySelector('body').classList.toggle('overflowy')
