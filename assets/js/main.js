@@ -95,7 +95,7 @@ $( document ).ready(function () {
 			if (document.location.pathname === currentPage) {
 				e.preventDefault();
 		    	$('html, body').stop().animate({
-		        	scrollTop: $(anchor).offset().top + 100
+		        	scrollTop: $(anchor).offset().top + 50
 		    	}, 400);	
 			}
 		});
