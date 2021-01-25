@@ -59,18 +59,25 @@ $( document ).ready(function () {
 	});
 
 
-	//Подсветка пунктов меню
+	// //Подсветка пунктов меню
 	$(function($) {
 	    const section = $('.anchor'),
 	          nav = $('.header-nav-list')
 	          headerTop = document.querySelector('.header-top-flexbox')
+	          headerNavList = document.querySelector('.header-nav-list')
+	          headerTopLogo = document.querySelector('.header-top-logo')
+
 	    $(window).on('scroll', function () {
 	        const position = $(this).scrollTop();
 
 	        if (position > 150) {
 	    		headerTop.style.maxHeight = '50px'
+	    		headerNavList.classList.add('header-nav-list-up')
+	    		headerTopLogo.style.paddingBottom = '6px'
 	    	} else {
 	    		headerTop.style.maxHeight = '100px'
+	    		headerNavList.classList.remove('header-nav-list-up')
+	    		headerTopLogo.style.paddingBottom = '20px'
 	    	}
 
 	        section.each(function () {
@@ -85,17 +92,6 @@ $( document ).ready(function () {
 	            }
 	        });
 	    });
-
-	    nav.find('a').on('click', function () {
-	        const id = $(this).attr('href');
-
-	        $('html, body').animate({
-	            scrollTop: $(id).offset().top
-	        }, 487);
-
-	        return false;
-	    });
-
 	});
 })
 

@@ -83,7 +83,7 @@ a {
 }
 .anchor {
 	position: absolute;
-	top: -100px;
+	top: -150px;
 	height: 100%;
 	width: 100%;
 }
@@ -450,6 +450,7 @@ a {
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	max-height: 100px;
+	transition: max-height 0.4s;
 }
 .header-top-logo-wrapper {
 	max-width: 100px;
@@ -703,10 +704,18 @@ a {
 		    -ms-flex-direction: column;
 		        flex-direction: column;
 		background-color: #F6F6F6;
-		-webkit-transition: max-height 0.5s;
-		-o-transition: max-height 0.5s;
-		-moz-transition: max-height 0.5s;
-		transition: max-height 0.5s; 
+		-webkit-transition: max-height 0.4s;
+		-o-transition: max-height 0.4s;
+		-moz-transition: max-height 0.4s;
+		transition: max-height 0.4s; 
+	}
+	.header-nav-list-up {
+		top: 50px;
+	}
+	.header-nav-list-up.header-nav-show {
+		max-height: -webkit-calc(100vh - 50px);
+		max-height: -moz-calc(100vh - 50px);
+		max-height: calc(100vh - 50px);
 	}
 	.header-nav-show {
 		max-height: -webkit-calc(100vh - 100px);
