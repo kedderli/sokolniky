@@ -41,9 +41,9 @@ $( document ).ready(function () {
 
 	// скролл по якорям
 	$("a.scroll-to").on("click", function(e){
-		let anchor = $(this).attr('href');
-		console.log(document.location.pathname)
-		if (anchor) {
+		const anchor = '#' + $(this).attr('href').split('#')[1];
+		const currentPage = '/sokolniky/' // Заменить на / на релизе
+		if (document.location.pathname === currentPage) {
 			e.preventDefault();
 	    	$('html, body').stop().animate({
 	        	scrollTop: $(anchor).offset().top
