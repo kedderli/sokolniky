@@ -31,32 +31,32 @@
 				<div class="header-nav-wrapper">
 					<ul class="header-nav-list" id="nav-list">
 						<li class="header-nav-item">
-							<a href="#" class="header-nav-item-link"><span class="header-nav-link-text">
+							<a href="#foto" class="header-nav-item-link scroll-to"><span class="header-nav-link-text">
 								Фотографии
 							</span></a>
 						</li>
 						<li class="header-nav-item">
-							<a href="#" class="header-nav-item-link"><span class="header-nav-link-text">
+							<a href="#story" class="header-nav-item-link"><span class="header-nav-link-text">
 								Личные истории
 							</span></a>
 						</li>
 						<li class="header-nav-item">
-							<a href="#" class="header-nav-item-link"><span class="header-nav-link-text">
+							<a href="#context" class="header-nav-item-link scroll-to"><span class="header-nav-link-text">
 								Контекст
 							</span></a>
 						</li>
 						<li class="header-nav-item">
-							<a href="#" class="header-nav-item-link"><span class="header-nav-link-text">
+							<a href="#map" class="header-nav-item-link scroll-to"><span class="header-nav-link-text">
 								Карта
 							</span></a>
 						</li>
 						<li class="header-nav-item">
-							<a href="#" class="header-nav-item-link"><span class="header-nav-link-text">
+							<a href="#about" class="header-nav-item-link scroll-to"><span class="header-nav-link-text">
 								О проекте
 							</span></a>
 						</li>
 						<li class="header-nav-item">
-							<a href="#" class="header-nav-item-link"><span class="header-nav-link-text">
+							<a href="#contacts" class="header-nav-item-link scroll-to"><span class="header-nav-link-text">
 								Контакты
 							</span></a>
 						</li>
@@ -97,6 +97,7 @@
 	</header>
 
 	<div class="foto-section-wrapper">
+		<span id="foto" class="anchor"></span>
 		<img src="assets/image/elements/picture-04.svg" alt="" class="picture-01 lg-hide">
 		<img src="assets/image/elements/picture-04.svg" alt="" class="picture-02 lg-hide">
 		<img src="assets/image/elements/picture-04.svg" alt="" class="picture-03 lg-hide">
@@ -346,7 +347,8 @@
 		</div>
 	</div>
 
-	<section class="section bg-noise" id="story">
+	<section class="section bg-noise" id="story-section">
+		<span id="story" class="anchor"></span>
 		<div class="container pos-rel">
 			<img src="assets/image/elements/picture-03.png" alt="" class="picture-07 md-hide">
 			<img src="assets/image/elements/picture-03.png" alt="" class="picture-08 md-hide">
@@ -405,7 +407,8 @@
 		</div>
 	</section>
 
-	<section class="section bg-gray" id="context">
+	<section class="section bg-gray" id="context-section">
+		<span id="context" class="anchor"></span>
 		<img src="assets/image/elements/picture-04.svg" alt="" class="picture-01 lg-hide">
 		<img src="assets/image/elements/picture-04.svg" alt="" class="picture-03 lg-hide">
 		<img src="assets/image/elements/picture-04.svg" alt="" class="picture-09 lg-hide">
@@ -471,6 +474,7 @@
 	</section>
 
 	<section class="section-map bg-noise">
+		<span id="map" class="anchor"></span>
 		<div class="container">
 			<h2 class="section-title">
 				Карта Парка Сокольники
@@ -817,6 +821,7 @@
 	</section>
 
 	<section class="section bg-gray">
+		<span id="about" class="anchor"></span>
 		<img src="assets/image/elements/picture-04.svg" alt="" class="picture-01 lg-hide">
 		<img src="assets/image/elements/picture-04.svg" alt="" class="picture-09 lg-hide">
 		<img src="assets/image/elements/picture-04.svg" alt="" class="picture-15 lg-hide">
@@ -908,6 +913,7 @@
 	</section>
 
 	<section class="section bg-noise">
+		<span id="contacts" class="anchor"></span>
 		<img src="assets/image/elements/picture-06.png" alt="" class="picture-18 bg-hide">
 		<div class="container">
 			<h2 class="section-title">
@@ -932,12 +938,12 @@
 				</div>
 				<div class="footer-item">
 					<div class="footer-nav-list">
-						<div class="footer-nav-item"><a href="#">О проекте</a></div>
-						<div class="footer-nav-item"><a href="#">Фотографии</a></div>
-						<div class="footer-nav-item"><a href="#">Личные истории</a></div>
-						<div class="footer-nav-item"><a href="#">Карта</a></div>
-						<div class="footer-nav-item"><a href="#">Контекст</a></div>
-						<div class="footer-nav-item"><a href="#">Контакты</a></div>
+						<div class="footer-nav-item"><a href="#about" class="scroll-to">О проекте</a></div>
+						<div class="footer-nav-item"><a href="#foto" class="scroll-to">Фотографии</a></div>
+						<div class="footer-nav-item"><a href="#story" class="scroll-to">Личные истории</a></div>
+						<div class="footer-nav-item"><a href="#map" class="scroll-to">Карта</a></div>
+						<div class="footer-nav-item"><a href="#context" class="scroll-to">Контекст</a></div>
+						<div class="footer-nav-item"><a href="#contacts" class="scroll-to">Контакты</a></div>
 					</div>
 					<div>
 						<a href="#" target="_blank" class="footer-link">Политика персональных данных</a>

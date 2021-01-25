@@ -1,4 +1,3 @@
-console.log(111)
 $( document ).ready(function () {
 	//Прелоадер
 	let preloader = document.querySelector('#preloader')
@@ -10,9 +9,9 @@ $( document ).ready(function () {
 	}, 700)
 
 	//Адаптивная высота слайдов истории и котекста
-	const fotoCardAll2 = document.querySelectorAll('#context .section-card-item')
+	const fotoCardAll2 = document.querySelectorAll('#context-section .section-card-item')
 	let fotoCardMaxHeight2 = (Math.max.apply(null, (Array.from(fotoCardAll2).map(function(line) {line.clientHeight}))))
-	const fotoCardAll = document.querySelectorAll('#story .section-card-item')
+	const fotoCardAll = document.querySelectorAll('#story-section .section-card-item')
 	let fotoCardMaxHeight = (Math.max.apply(null, (Array.from(fotoCardAll).map(function (line) {line.clientHeight}))))
 
 	fotoCardAll2.forEach(function (item) {
@@ -38,7 +37,16 @@ $( document ).ready(function () {
 		fotoCardAll.forEach(function (item) {
 			item.style.height = fotoCardMaxHeight + 'px'
 		})
-	}) 
+	})
+
+	// скролл по якорям
+	$("a.scroll-to").on("click", function(e){
+	    e.preventDefault();
+	    var anchor = $(this).attr('href');
+	    $('html, body').stop().animate({
+	        scrollTop: $(anchor).offset().top
+	    }, 800);
+	});
 })
 
 // Кнопка разворачивания меню
@@ -59,10 +67,12 @@ const navList = document.querySelector('#nav-list');
 		}, 500)
 	}
 	navList.onclick = function (){
-		navToggle.classList.toggle('header-nav-button-active');
-		navList.classList.toggle('header-nav-show');
-		document.querySelector('body').classList.toggle('overflowy')
-		document.querySelector('html').classList.toggle('overflowy')
+		if (window.innerWidth < 1201) {
+			navToggle.classList.toggle('header-nav-button-active');
+			navList.classList.toggle('header-nav-show');
+			document.querySelector('body').classList.toggle('overflowy')
+			document.querySelector('html').classList.toggle('overflowy')
+		}
 	}
 
 
@@ -156,19 +166,19 @@ fotoSlider.on('afterChange', function () {
 		dotsFalse[activeSlide].classList.toggle('tab-active')
 		dotsFalse[currentSlide].classList.toggle('tab-active')
 		activeSlide = currentSlide
-		dotsTrue[currentSlide].dispatchEvent(event)
+		dotsTrue[currentSlide].click()
 	}
 })
 
 //Инициализация слайдера историй
 
-$('#story .section-card-list').slick({
+$('#story-section .section-card-list').slick({
 			dots: false,
 			infinite: false,
 			arrows: true,
 			draggable: false,
 			swipe: false,
-			appendArrows: $('#story .section-head-wrapper'),
+			appendArrows: $('#story-section .section-head-wrapper'),
 			prevArrow: '<button type = "button" class = "section-slider-prev"><img src="assets/image/icons/prev.png"></button>',
 	 		nextArrow: '<button type = "button" class = "section-slider-next"><img src="assets/image/icons/next.png"></button>',
 			speed: 300,
@@ -196,13 +206,13 @@ $('#story .section-card-list').slick({
 
 //Инициализация слайдера контекста
 
-$('#context .section-card-list').slick({
+$('#context-section .section-card-list').slick({
 			dots: false,
 			infinite: false,
 			arrows: true,
 			draggable: false,
 			swipe: false,
-			appendArrows: $('#context .section-head-wrapper'),
+			appendArrows: $('#context-section .section-head-wrapper'),
 			prevArrow: '<button type = "button" class = "section-slider-prev"><img src="assets/image/icons/prev.png"></button>',
 	 		nextArrow: '<button type = "button" class = "section-slider-next"><img src="assets/image/icons/next.png"></button>',
 			speed: 300,
@@ -227,7 +237,7 @@ $('#context .section-card-list').slick({
 		});
 
 //Интерактивная карта 
-$('.map-card-list').slick({
+const mapSlider = $('.map-card-list').slick({
 			dots: true,
 			infinite: false,
 			arrows: false,
@@ -279,17 +289,25 @@ const mapDotsChange = function (ind) {
 		mapSliderDots[ind].click()
 
 		circleActicve = ind
-	}
-		
+	}	
 } 
 
+if (!(circleList[1].childNodes[1].classList)) {
+	circleList[0].childNodes[1].setAttribute("r", "27.3")
+	circleList[0].childNodes[3].setAttribute("r", "22.5")
+}
+
 for (let i = 0; i < circleList.length; i++) {
-	if (!(circleList[1].childNodes[1].classList)) {
-		circleList[0].childNodes[1].setAttribute("r", "27.3")
-		circleList[0].childNodes[3].setAttribute("r", "22.5")
-	}
 	circleList[i].addEventListener('click', mapDotsChange.bind(null, i))
 }		
+
+mapSlider.on('afterChange', function () {
+	let currentMapSlide = mapSlider.slick('slickCurrentSlide')
+	mapDotsChange(currentMapSlide)
+	circleActicve = currentMapSlide
+	
+})
+
 
 //Инициализация слайдера партнёров
 $('.partners-list').slick({
