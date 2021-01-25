@@ -93,7 +93,7 @@ $( document ).ready(function () {
 			if (document.location.pathname === currentPage) {
 				e.preventDefault();
 		    	$('html, body').stop().animate({
-		        	scrollTop: $(anchor).offset().top - padingScroll
+		        	scrollTop: $(anchor).offset().top - padingScroll + 100
 		    	}, 400);	
 			}
 		});
