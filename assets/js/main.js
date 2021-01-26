@@ -33,34 +33,14 @@ $( document ).ready(function () {
 	// //Подсветка пунктов меню
 	$(function($) {
 		if ($(this).scrollTop() > 0) {
-			window.scrollBy(0, -50)
+			window.scrollBy(0, -100)
 		}
 		const section = $('.anchor'),
 			  nav = $('.header-nav-list')
-			  headerTop = document.querySelector('.header-top-flexbox')
-			  headerNavList = document.querySelector('.header-nav-list')
-			  headerTopLogo = document.querySelector('.header-top-logo')
 
 		$(window).on('scroll', function () {
 			const position = $(this).scrollTop();
 
-			if (position > 150) {
-				headerTop.style.maxHeight = '50px'
-				headerNavList.classList.add('header-nav-list-up')
-				headerTopLogo.style.paddingBottom = '6px'
-				if (window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1) {
-					headerTopLogo.style.height = '50%'
-					headerNavList.style.height = '50%' 
-				}
-			} else {
-				headerTop.style.maxHeight = '100px'
-				headerNavList.classList.remove('header-nav-list-up')
-				headerTopLogo.style.paddingBottom = '20px'
-				if (window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1) {
-					headerTopLogo.style.height = '100%'
-					headerNavList.style.height = '100%'
-				}
-			}
 			if (document.location.pathname === '/sokolniky/') {
 				section.each(function () {
 					const top = $(this).offset().top - 5,
@@ -417,4 +397,3 @@ $( document ).ready(function () {
 	}
 })
 
-	
