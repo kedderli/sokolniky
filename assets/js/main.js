@@ -111,99 +111,6 @@ $( document ).ready(function () {
 				}, 400)	
 			})
 
-		// Инициализация слайдера фото
-		$('.foto-slider-list').slick({
-					dots: true,
-					infinite: false,
-					arrows: false,
-					speed: 700,
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					draggable: false,
-					swipe: false,
-					adaptiveHeight: true
-				});
-
-		const fotoSlider = $('.foto-tab-list').slick({
-					dots: false,
-					infinite: false,
-					speed: 500,
-					slidesToShow: 11,
-					slidesToScroll: 11,
-					prevArrow: '<button type = "button" class = "slick-prev-a"><img src="assets/image/icons/prev.png"></button>',
-					nextArrow: '<button type = "button" class = "slick-next-a"><img src="assets/image/icons/next.png"></button>',
-					arrows: true,
-					responsive: [
-						{
-							breakpoint: 1200,
-							settings: {
-								slidesToShow: 7,
-								slidesToScroll: 7,
-							}
-						},
-						{
-							breakpoint: 992,
-							settings: {
-								slidesToShow: 6,
-								slidesToScroll: 6,
-							}
-						},
-						{
-							breakpoint: 768,
-							settings: {
-								slidesToShow: 4,
-								slidesToScroll: 4,
-							}
-						},
-						{
-							breakpoint: 576,
-							settings: {
-								slidesToShow: 2,
-								slidesToScroll: 2,
-							}
-						},
-						{
-							breakpoint: 390,
-							settings: {
-								slidesToShow: 1,
-								slidesToScroll: 1,
-							}
-						}
-					]
-				});
-
-		const dotsTrue = document.querySelectorAll('.slick-dots li')
-		const dotsFalse = document.querySelectorAll('.foto-tab-item')
-
-		let activeSlide = 0
-		let tabChangeNow = false
-
-		const changeSlideFoto = function () {
-			if (!tabChangeNow) {
-				tabChangeNow = true
-				dotsFalse[activeSlide].classList.toggle('tab-active')
-				dotsFalse[this].classList.toggle('tab-active')
-				activeSlide = this
-				dotsTrue[this].click()
-				setTimeout(function () {
-					tabChangeNow = false
-				}, 650)
-			}
-		}
-
-		for (let i = 0; i < dotsTrue.length; i++) {
-			dotsFalse[i].addEventListener('click', changeSlideFoto.bind(i))
-		}
-
-		fotoSlider.on('afterChange', function () {
-			if (document.documentElement.clientWidth <= 390) {
-				let currentSlide = fotoSlider.slick('slickCurrentSlide')
-				dotsFalse[activeSlide].classList.toggle('tab-active')
-				dotsFalse[currentSlide].classList.toggle('tab-active')
-				activeSlide = currentSlide
-				dotsTrue[currentSlide].click()
-			}
-		})
 
 		//Инициализация слайдера историй
 
@@ -394,6 +301,138 @@ $( document ).ready(function () {
 						}
 					]
 				});
+	}
+
+	// Вкладки фотогалереи
+	if (document.location.pathname === '/sokolniky/' || document.location.pathname === '/sokolniky/photogallery/') {
+		// Инициализация слайдера фото
+		$('.foto-slider-list').slick({
+					dots: true,
+					infinite: false,
+					arrows: false,
+					speed: 700,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					draggable: false,
+					swipe: false,
+					adaptiveHeight: true
+				});
+
+		const fotoSlider = $('.foto-tab-list').slick({
+					dots: false,
+					infinite: false,
+					speed: 500,
+					slidesToShow: 11,
+					slidesToScroll: 11,
+					prevArrow: '<button type = "button" class = "slick-prev-a"><img src="assets/image/icons/prev.png"></button>',
+					nextArrow: '<button type = "button" class = "slick-next-a"><img src="assets/image/icons/next.png"></button>',
+					arrows: true,
+					responsive: [
+						{
+							breakpoint: 1200,
+							settings: {
+								slidesToShow: 7,
+								slidesToScroll: 7,
+							}
+						},
+						{
+							breakpoint: 992,
+							settings: {
+								slidesToShow: 6,
+								slidesToScroll: 6,
+							}
+						},
+						{
+							breakpoint: 768,
+							settings: {
+								slidesToShow: 4,
+								slidesToScroll: 4,
+							}
+						},
+						{
+							breakpoint: 576,
+							settings: {
+								slidesToShow: 2,
+								slidesToScroll: 2,
+							}
+						},
+						{
+							breakpoint: 390,
+							settings: {
+								slidesToShow: 1,
+								slidesToScroll: 1,
+							}
+						}
+					]
+				});
+
+		const dotsTrue = document.querySelectorAll('.slick-dots li')
+		const dotsFalse = document.querySelectorAll('.foto-tab-item')
+
+		let activeSlide = 0
+		let tabChangeNow = false
+
+		const changeSlideFoto = function () {
+			if (!tabChangeNow) {
+				tabChangeNow = true
+				dotsFalse[activeSlide].classList.toggle('tab-active')
+				dotsFalse[this].classList.toggle('tab-active')
+				activeSlide = this
+				dotsTrue[this].click()
+				setTimeout(function () {
+					tabChangeNow = false
+				}, 650)
+			}
+		}
+
+		for (let i = 0; i < dotsTrue.length; i++) {
+			dotsFalse[i].addEventListener('click', changeSlideFoto.bind(i))
+		}
+
+		fotoSlider.on('afterChange', function () {
+			if (document.documentElement.clientWidth <= 390) {
+				let currentSlide = fotoSlider.slick('slickCurrentSlide')
+				dotsFalse[activeSlide].classList.toggle('tab-active')
+				dotsFalse[currentSlide].classList.toggle('tab-active')
+				activeSlide = currentSlide
+				dotsTrue[currentSlide].click()
+			}
+		})
+	}
+
+	// Фотогалереяы
+	if (document.location.pathname === '/sokolniky/photogallery/') {
+		const photogallerySlide = document.querySelector('#photogallery-slide')
+		const photogallerySlideContent = document.querySelector('#photogallery-slide-content')
+		const photogalleryClose = document.querySelector('#photogallery-slide-close')
+		const photogalleryBG = document.querySelector('#photogallery-slide-bg')
+		const photogalleryList = document.querySelectorAll('.photogallery-item-image')
+
+		const openPhotogallerySlide = function () {
+			photogallerySlide.style.display = 'block'
+			document.querySelector('html').classList.add('overflowy')
+			document.querySelector('body').classList.add('overflowy')
+			photogallerySlideContent.innerHTML = this.innerHTML
+			setTimeout(function() {
+				photogallerySlide.classList.add('active')
+			}, 1)
+		}
+
+		const closePhotogallerySlide = function () {
+			photogallerySlide.classList.remove('active')
+			setTimeout(function() {
+				document.querySelector('html').classList.remove('overflowy')
+				document.querySelector('body').classList.remove('overflowy')
+				photogallerySlide.style.display = 'none'
+			}, 400)
+		}
+
+		for (let i = 0; i < photogalleryList.length; i++) {
+			photogalleryList[i].addEventListener('click', openPhotogallerySlide.bind(photogalleryList[i]))
+		}
+
+		photogalleryClose.addEventListener('click', closePhotogallerySlide)
+		photogalleryBG.addEventListener('click', closePhotogallerySlide)
 	}
 })
 

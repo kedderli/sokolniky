@@ -1,6 +1,7 @@
 html, body {
 	position: relative;
 	overflow-x: hidden;
+	background-color: #3C3973;
 }
 p {
 	margin-top: 0;
@@ -2145,3 +2146,130 @@ a {
 	}
 }
 /* ********** Конец Статьи ********** */
+
+/* ********** Начало фотогалереи ********** */
+.active .photogallery-slide-bg {
+	width: 100%;
+	height: 100%;
+	opacity: 0.6;
+}
+.active .photogallery-slide-foto-wrapper {
+	transform: translate(-50%, -50%);
+}
+.photogallery-slide-wrapper {
+	display: none;
+	position: fixed;
+	z-index: 500;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+}
+.photogallery-slide-bg {
+	width: 0;
+	height: 0;
+	background: #323538;
+	opacity: 0;
+	transition: opacity 0.4s;
+}
+.photogallery-slide-foto-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 100vh);
+	width: 800px;
+	max-height: 90vh;
+	overflow-y: auto;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 32px;
+	box-sizing: border-box;
+	transition: transform 0.4s;
+}
+.photogallery-slide-foto-wrapper img {
+	width: 100%;
+	display: block;
+}
+.photogallery-slide-text {
+	font-family: Roboto Slab;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 28px;
+	color: #8D8D8D;
+	margin-top: 32px;
+}
+.photogallery-close-wrapper {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	z-index: 5;
+}
+.photogallery-close {
+	cursor: pointer;
+	position: relative;
+	width: 30px;
+	height: 30px;
+	opacity: 0.5;
+}
+.photogallery-close:hover {
+	opacity: 1;
+}
+.photogallery-close:before, .photogallery-close:after {
+	position: absolute;
+	left: 14px;
+	top: 7px;
+	content: ' ';
+	height: 14px;
+	width: 2px;
+	background-color: #000;
+}
+.photogallery-close:before {
+	transform: rotate(45deg);
+}
+.photogallery-close:after {
+	transform: rotate(-45deg);
+}
+.photogallery-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.photogallery-item {
+	position: relative;
+	width: 352px;
+	height: 217px;
+	background-color: #fff;
+	border-radius: 4px;
+	margin-bottom: 32px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+.photogallery-item:hover {
+	transform: scale(1.01);
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+}
+.photogallery-item-image {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 344px;
+	height: 209px;
+	border-radius: 2px;
+	overflow: hidden;
+}
+.photogallery-item-image img {
+	display: block;
+	width: 100%;
+}
+@media (max-width: 992px){
+	.photogallery-list {
+		justify-content: center;
+	}
+}
+@media (max-width: 801px){
+	.photogallery-slide-foto-wrapper {
+		width: 100%;
+	}
+}
+/* ********** Конец фотогалереи ********** */

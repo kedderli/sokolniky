@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Детство в Сокольниках</title>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+	<div class="preloader" id="preloader">
+		<div class="preloader-wrapper">
+			<div class="lds-dual-ring"></div>
+		</div>
+	</div>
+	<header class="header">
+		<div class="header-top-wrapper">
+			<div class="container header-top-flexbox">
+				<div class="header-top-logo-wrapper">
+					<a href="#">
+						<img src="assets/image/icons/logo_small.svg" alt="Детство в Сокольниках" class="header-top-logo">
+					</a>
+				</div>
+				<div class="header-nav-wrapper">
+					<ul class="header-nav-list" id="nav-list">
+						<li class="header-nav-item">
+							<a href="/sokolniky/#foto" class="header-nav-item-link scroll-to"><span class="header-nav-link-text">
+								Фотографии
+							</span></a>
+						</li>
+						<li class="header-nav-item">
+							<a href="/sokolniky/#story" class="header-nav-item-link scroll-to"><span class="header-nav-link-text">
+								Личные истории
+							</span></a>
+						</li>
+						<li class="header-nav-item">
+							<a href="/sokolniky/#context" class="header-nav-item-link scroll-to"><span class="header-nav-link-text">
+								Контекст
+							</span></a>
+						</li>
+						<li class="header-nav-item">
+							<a href="/sokolniky/#map" class="header-nav-item-link scroll-to"><span class="header-nav-link-text">
+								Карта
+							</span></a>
+						</li>
+						<li class="header-nav-item">
+							<a href="/sokolniky/#about" class="header-nav-item-link scroll-to"><span class="header-nav-link-text">
+								О проекте
+							</span></a>
+						</li>
+						<li class="header-nav-item">
+							<a href="/sokolniky/#contacts" class="header-nav-item-link scroll-to"><span class="header-nav-link-text">
+								Контакты
+							</span></a>
+						</li>
+						<li class="header-nav-item">
+							<div class="header-top-icons-list">
+								<div class="header-top-icons-item">
+									<a href="#" target="_blank"><img src="assets/image/icons/facebook.png" alt="fb"></a>
+								</div>
+								<div class="header-top-icons-item">
+									<a href="#" target="_blank"><img src="assets/image/icons/vk.png" alt="vk"></a>
+								</div>
+								<div class="header-top-icons-item">
+									<a href="#" target="_blank"><img src="assets/image/icons/instagram.png" alt="inst"></a>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div id="nav-toggle" class="header-nav-button">
+						<div class="nav-icon-line"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header-bottom bg-noise">
+			<div class="container header-bottom-wrapper">
+				<div>
+					<img src="assets/image/icons/logo_large.svg" alt="Детство в Сокольниках" class="header-bottom-logo">
+				</div>
+				<div>
+					<img src="assets/image/elements/picture-01.png" alt="" class="header-bottom-picture">
+					<img src="assets/image/elements/picture-02.png" alt="" class="header-bottom-picture">
+				</div>
+				<div>
+					<img src="assets/image/header/header-bottom-foto.png" alt="" class="header-bottom-foto">
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="photogallery-slide-wrapper" id="photogallery-slide">
+		<div class="photogallery-slide-bg" id="photogallery-slide-bg"></div>
+		<div class="photogallery-slide-foto-wrapper">
+			<div class="photogallery-close-wrapper" id="photogallery-slide-close"><div class="photogallery-close"></div></div>
+			<div class="photogallery-slide-content" id="photogallery-slide-content">
+			</div>
+		</div>
+	</div>
+	<div class="foto-section-wrapper bg-gray">
+		<div class="container">
+			<div class="foto-tab-list">
+				<div class="foto-tab-item tab-active">
+					<div class = "shapes-item">
+						<span class = "shapes-item__text">1910-е</span>
+						<span class = "shapes-item__left"></span>
+						<span class = "shapes-item__right"></span>
+					</div>
+				</div>
+				<div class="foto-tab-item">
+					<div class = "shapes-item">
+						<span class = "shapes-item__text">1920-е</span>
+						<span class = "shapes-item__left"></span>
+						<span class = "shapes-item__right"></span>
+					</div>
+				</div>
+				<div class="foto-tab-item">
+					<div class = "shapes-item">
+						<span class = "shapes-item__text">1930-е</span>
+						<span class = "shapes-item__left"></span>
+						<span class = "shapes-item__right"></span>
+					</div>
+				</div>
+				<div class="foto-tab-item">
+					<div class = "shapes-item">
+						<span class = "shapes-item__text">1940-е</span>
+						<span class = "shapes-item__left"></span>
+						<span class = "shapes-item__right"></span>
+					</div>
+				</div>
+				<div class="foto-tab-item">
+					<div class = "shapes-item">
+						<span class = "shapes-item__text">1950-е</span>
+						<span class = "shapes-item__left"></span>
+						<span class = "shapes-item__right"></span>
+					</div>
+				</div>
+				<div class="foto-tab-item">
+					<div class = "shapes-item">
+						<span class = "shapes-item__text">1960-е</span>
+						<span class = "shapes-item__left"></span>
+						<span class = "shapes-item__right"></span>
+					</div>
+				</div>
+				<div class="foto-tab-item">
+					<div class = "shapes-item">
+						<span class = "shapes-item__text">1970-е</span>
+						<span class = "shapes-item__left"></span>
+						<span class = "shapes-item__right"></span>
+					</div>
+				</div>
+				<div class="foto-tab-item">
+					<div class = "shapes-item">
+						<span class = "shapes-item__text">1980-е</span>
+						<span class = "shapes-item__left"></span>
+						<span class = "shapes-item__right"></span>
+					</div>
+				</div>
+				<div class="foto-tab-item">
+					<div class = "shapes-item">
+						<span class = "shapes-item__text">1990-е</span>
+						<span class = "shapes-item__left"></span>
+						<span class = "shapes-item__right"></span>
+					</div>
+				</div>
+				<div class="foto-tab-item">
+					<div class = "shapes-item">
+						<span class = "shapes-item__text">2000-е</span>
+						<span class = "shapes-item__left"></span>
+						<span class = "shapes-item__right"></span>
+					</div>
+				</div>
+				<div class="foto-tab-item">
+					<div class = "shapes-item">
+						<span class = "shapes-item__text">2010-е</span>
+						<span class = "shapes-item__left"></span>
+						<span class = "shapes-item__right"></span>
+					</div>
+				</div>
+			</div>
+			<div class="foto-slider-list">
+				<div class="foto-slider-item-wrapper">
+					<div class="foto-slider-item">
+						<div class="photogallery-list">
+							<div class="photogallery-item">
+								<div class="photogallery-item-image">
+									<img src="assets/image/photogallery/1.jpg" alt="">
+									<p class="photogallery-slide-text">Lorem ipsum dolor sit amet.</p>
+								</div>
+							</div>
+							<div class="photogallery-item">
+								<div class="photogallery-item-image">
+									<img src="assets/image/photogallery/1.jpg" alt="">
+								</div>
+							</div>
+							<div class="photogallery-item">
+								<div class="photogallery-item-image">
+									<img src="assets/image/photogallery/1.jpg" alt="">
+								</div>
+							</div>
+							<div class="photogallery-item">
+								<div class="photogallery-item-image">
+									<img src="assets/image/photogallery/1.jpg" alt="">
+								</div>
+							</div>
+							<div class="photogallery-item">
+								<div class="photogallery-item-image">
+									<img src="assets/image/photogallery/1.jpg" alt="">
+								</div>
+							</div>
+							<div class="photogallery-item">
+								<div class="photogallery-item-image">
+									<img src="assets/image/photogallery/1.jpg" alt="">
+								</div>
+							</div>
+							<div class="photogallery-item">
+								<div class="photogallery-item-image">
+									<img src="assets/image/photogallery/1.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="foto-slider-item-wrapper">
+					<div class="foto-slider-item">
+						2
+					</div>
+				</div>
+				<div class="foto-slider-item-wrapper">
+					<div class="foto-slider-item">
+						3
+					</div>
+				</div>
+				<div class="foto-slider-item-wrapper">
+					<div class="foto-slider-item">
+						4
+					</div>
+				</div>
+				<div class="foto-slider-item-wrapper">
+					<div class="foto-slider-item">
+						5
+					</div>
+				</div>
+				<div class="foto-slider-item-wrapper">
+					<div class="foto-slider-item">
+						6
+					</div>
+				</div>
+				<div class="foto-slider-item-wrapper">
+					<div class="foto-slider-item">
+						7
+					</div>
+				</div>
+				<div class="foto-slider-item-wrapper">
+					<div class="foto-slider-item">
+						8
+					</div>
+				</div>
+				<div class="foto-slider-item-wrapper">
+					<div class="foto-slider-item">
+						9
+					</div>
+				</div>
+				<div class="foto-slider-item-wrapper">
+					<div class="foto-slider-item">
+						10
+					</div>
+				</div>
+				<div class="foto-slider-item-wrapper">
+					<div class="foto-slider-item">
+						11
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-list">
+				<div>
+					<a href="/sokolniky/" target="_blank">
+						<img src="assets/image/icons/library-logo.png" alt="Библиотека востока Москвы">
+					</a>
+				</div>
+				<div class="footer-item">
+					<div class="footer-nav-list">
+						<div class="footer-nav-item"><a href="/sokolniky/#about" class="scroll-to">О проекте</a></div>
+						<div class="footer-nav-item"><a href="/sokolniky/#foto" class="scroll-to">Фотографии</a></div>
+						<div class="footer-nav-item"><a href="/sokolniky/#story" class="scroll-to">Личные истории</a></div>
+						<div class="footer-nav-item"><a href="/sokolniky/#map" class="scroll-to">Карта</a></div>
+						<div class="footer-nav-item"><a href="/sokolniky/#context" class="scroll-to">Контекст</a></div>
+						<div class="footer-nav-item"><a href="/sokolniky/#contacts" class="scroll-to">Контакты</a></div>
+					</div>
+					<div>
+						<a href="#" target="_blank" class="footer-link">Политика персональных данных</a>
+					</div>
+				</div>
+				<div>
+					<div class="footer-icons-list">
+						<div class="footer-icons-item">
+							<a href="#" target="_blank"><img src="assets/image/icons/w-vk.png" alt="vk"></a>
+						</div>
+						<div class="footer-icons-item">
+							<a href="#" target="_blank"><img src="assets/image/icons/w-facebook.png" alt="fb"></a>
+						</div>
+						<div class="footer-icons-item">
+							<a href="#" target="_blank"><img src="assets/image/icons/w-instagram.png" alt="inst"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+	<script src="assets/js/main.js"></script>
+</body>
+</html>
