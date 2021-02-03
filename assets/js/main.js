@@ -302,10 +302,10 @@ $( document ).ready(function () {
 				});
 	}
 
-	// Вкладки фотогалереи
-	if (document.location.pathname === '/sokolniky/' || document.location.pathname === '/sokolniky/photogallery.html') {
+	// Вкладки фотогалереи document.location.pathname === '/sokolniky/' || document.location.pathname === '/sokolniky/photogallery.html'
+	if (true) {
 		// Инициализация слайдера фото
-		$('.foto-slider-list').slick({
+		const fotoPostSlider = $('.foto-slider-list').slick({
 					dots: true,
 					infinite: false,
 					arrows: false,
@@ -320,11 +320,11 @@ $( document ).ready(function () {
 		const fotoSlider = $('.foto-tab-list').slick({
 					dots: false,
 					infinite: false,
-					speed: 500,
+					speed: 700,
 					slidesToShow: 11,
 					slidesToScroll: 11,
-					prevArrow: '<button type = "button" class = "slick-prev-a"><img src="assets/image/icons/prev.png"></button>',
-					nextArrow: '<button type = "button" class = "slick-next-a"><img src="assets/image/icons/next.png"></button>',
+					prevArrow: '<button type = "button" class = "slick-prev-a" id="foto-tab-prev"><img src="assets/image/icons/prev.png"></button>',
+					nextArrow: '<button type = "button" class = "slick-next-a" id="foto-tab-next"><img src="assets/image/icons/next.png"></button>',
 					arrows: true,
 					responsive: [
 						{
@@ -388,19 +388,19 @@ $( document ).ready(function () {
 			dotsFalse[i].addEventListener('click', changeSlideFoto.bind(i))
 		}
 
-		fotoSlider.on('afterChange', function () {
-			if (document.documentElement.clientWidth <= 390) {
-				let currentSlide = fotoSlider.slick('slickCurrentSlide')
-				dotsFalse[activeSlide].classList.toggle('tab-active')
-				dotsFalse[currentSlide].classList.toggle('tab-active')
-				activeSlide = currentSlide
-				dotsTrue[currentSlide].click()
-			}
+		const fotoTabPrev = document.querySelector('#foto-tab-prev')
+		const fotoTabNext = document.querySelector('#foto-tab-next')
+
+		fotoTabPrev.addEventListener('click', function() {
+			fotoPostSlider.slick('slickPrev')
+		})
+		fotoTabNext.addEventListener('click', function() {
+			fotoPostSlider.slick('slickNext')
 		})
 	}
 
-	// Фотогалереяы
-	if (document.location.pathname === '/sokolniky/photogallery.html') {
+	// Фотогалерея document.location.pathname === '/sokolniky/photogallery.html'
+	if (true) {
 		const photogallerySlide = document.querySelector('#photogallery-slide')
 		const photogallerySlideContent = document.querySelector('#photogallery-slide-content')
 		const photogalleryClose = document.querySelector('#photogallery-slide-close')
