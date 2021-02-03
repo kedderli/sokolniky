@@ -30,18 +30,20 @@ $( document ).ready(function () {
 			}
 		}
 
-	// //Подсветка пунктов меню
-	$(function($) {
-		if ($(this).scrollTop() > 0) {
-			window.scrollBy(0, -100)
-		}
-		const section = $('.anchor'),
-			  nav = $('.header-nav-list')
+	//запускается только на главной document.location.pathname === '/sokolniky/'
+	if (true) {
 
-		$(window).on('scroll', function () {
-			const position = $(this).scrollTop();
+		// //Подсветка пунктов меню
+		$(function($) {
+			if ($(this).scrollTop() > 0) {
+				window.scrollBy(0, -100)
+			}
+			const section = $('.anchor'),
+				  nav = $('.header-nav-list')
 
-			if (document.location.pathname === '/sokolniky/') {
+			$(window).on('scroll', function () {
+				const position = $(this).scrollTop();
+				console.log(1)
 				section.each(function () {
 					const top = $(this).offset().top - 5,
 						  bottom = top + $(this).outerHeight()
@@ -49,15 +51,12 @@ $( document ).ready(function () {
 						nav.find('a').removeClass('active')
 						section.removeClass('active')
 						$(this).addClass('active')
-						nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active')
+						nav.find('a[href="/sokolniky/#' + $(this).attr('id') + '"]').addClass('active')
 					}
 				})
-			}
+			})
 		})
-	})
 
-	//запускается только на главной
-	if (document.location.pathname === '/sokolniky/') {
 		//Адаптивная высота слайдов истории и котекста
 		const fotoCardAll2 = Array.prototype.slice.call(document.querySelectorAll('#context-section .section-card-item'))
 		let fotoCardMaxHeight2 = (Math.max.apply(null, (Array.prototype.slice.call(fotoCardAll2).map(function(line) { return line.clientHeight }))))
