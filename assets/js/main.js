@@ -304,7 +304,7 @@ $( document ).ready(function () {
 	}
 
 	// Вкладки фотогалереи
-	if (document.location.pathname === '/sokolniky/' || document.location.pathname === '/sokolniky/photogallery/') {
+	if (document.location.pathname === '/sokolniky/' || document.location.pathname === '/sokolniky/photogallery.html') {
 		// Инициализация слайдера фото
 		$('.foto-slider-list').slick({
 					dots: true,
@@ -401,7 +401,7 @@ $( document ).ready(function () {
 	}
 
 	// Фотогалереяы
-	if (document.location.pathname === '/sokolniky/photogallery/') {
+	if (document.location.pathname === '/sokolniky/photogallery.html') {
 		const photogallerySlide = document.querySelector('#photogallery-slide')
 		const photogallerySlideContent = document.querySelector('#photogallery-slide-content')
 		const photogalleryClose = document.querySelector('#photogallery-slide-close')
