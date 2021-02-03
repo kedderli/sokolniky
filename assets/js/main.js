@@ -30,10 +30,10 @@ $( document ).ready(function () {
 			}
 		}
 
-	//запускается только на главной document.location.pathname === '/sokolniky/'
-	if (true) {
+	//запускается только на главной 
+	if (document.location.pathname === '/sokolniky/') {
 
-		// //Подсветка пунктов меню
+		//Подсветка пунктов меню
 		$(function($) {
 			if ($(this).scrollTop() > 0) {
 				window.scrollBy(0, -100)
