@@ -2156,6 +2156,10 @@ a {
 .active .photogallery-slide-foto-wrapper {
 	transform: translate(-50%, -50%);
 }
+.active .photogallery-slide-text {
+	display: inline-block;
+	margin-top: 32px;
+}
 .photogallery-slide-wrapper {
 	display: none;
 	position: fixed;
@@ -2191,12 +2195,13 @@ a {
 	display: block;
 }
 .photogallery-slide-text {
+	display: none;
+	margin-top: 32px;
 	font-family: Roboto Slab;
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 28px;
 	color: #8D8D8D;
-	margin-top: 32px;
 }
 .photogallery-close-wrapper {
 	position: absolute;
@@ -2262,14 +2267,26 @@ a {
 	display: block;
 	width: 100%;
 }
+.photogallery-margin-top {
+	margin-top: 20px;
+}
 @media (max-width: 992px){
 	.photogallery-list {
 		justify-content: center;
 	}
 }
-@media (max-width: 801px){
+@media (max-width: 800px){
 	.photogallery-slide-foto-wrapper {
 		width: 100%;
 	}
 }
+@media (max-width: 576px){
+	.photogallery-item {
+		width: 264px;
+		height: 162.75px;
+	}
+	.photogallery-item-image {
+		width: 256px;
+		height: 154.75px;
+	}
 /* ********** Конец фотогалереи ********** */
