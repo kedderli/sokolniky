@@ -2289,4 +2289,106 @@ a {
 		width: 256px;
 		height: 154.75px;
 	}
+}
 /* ********** Конец фотогалереи ********** */
+
+/* ********** Начало страницы историй ********** */
+.page-card-list {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.page-card-item-wrapper {
+	margin-bottom: 32px;
+	transition: transform 0.3s
+}
+.page-card-item-wrapper:hover {
+	transform: translateY(-15px);
+}
+.page-index-list {
+	display: flex;
+}
+.page-index-item {
+	position: relative;
+	width: 35px;
+	height: 35px;
+	background: #FFFFFF;
+	border-radius: 3px;
+	margin-right: 16px;
+	cursor: pointer;
+}
+.page-index-link {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.page-index {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-family: Roboto Slab;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+	color: #A6AEBF;
+}
+.active.page-index-item {
+	background: #3C3973;;
+}
+.active .page-index {
+	color: #fff;
+}
+.posts-list-title {
+	display: flex;
+	align-items: center;
+}
+.posts-list-title h1{
+	font-family: Amatic SC;
+	font-weight: bold;
+	font-size: 100px;
+	line-height: 126px;
+	text-transform: uppercase;
+	color: #3C3973;
+    width: 490px;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+.header-bottom-foto-posts-list {
+	right: 0;
+}
+.posts-list-picture {
+	position: absolute;
+	top: -20px;
+	left: 40%;
+	transform: translateX(-50%);
+}
+@media (max-width: 1200px){
+	.page-card-list {
+		justify-content: center;
+	}
+	.page-card-item-wrapper {
+		margin-right: 16px;
+		margin-left: 16px;
+	}
+}
+@media (max-width: 768px){
+	.header-bottom-foto-posts-list {
+		right: 50%;
+	}
+	.posts-list-title h1{
+		font-size: 80px;
+		line-height: 86px;
+		width: 100%;
+	}
+	.posts-list-picture {
+		display: none;
+	}
+}
+@media (max-width: 576px){
+	.page-card-list .section-card-item {
+		max-width: 280px;
+	}
+}
+/* ********** Конец страницы историй ********** */
