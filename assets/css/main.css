@@ -2027,15 +2027,7 @@ a {
 	     -o-transform: translateX(-50%);
 	        transform: translateX(-50%);*/
 }
-.category-left {
-	position: absolute;
-	left: 0;
-	top: 100px;
-	height: 27px;
-	width: -webkit-calc(-webkit-calc(100% - 1140px)/2);
-	width: -moz-calc(-moz-calc(100% - 1140px)/2);
-	width: calc(calc(100% - 1140px)/2);
-}
+
 @media (max-width: 1440px){
 	.article-body-image-wrapper img{
 		width: 500px;		
@@ -2088,11 +2080,6 @@ a {
 		padding-left: 0;
 	}
 }
-@media (max-width: 768px){
-	.article-image img {
-		width: 100%;
-	}
-}
 @media (max-width: 992px){
 	.article-body-image {
 		position: relative;
@@ -2131,6 +2118,39 @@ a {
 		transform: translateY(0);
 	}
 }
+@media (max-width: 768px){
+	.article-image img {
+		width: 100%;
+	}
+}
+@media (max-width: 576px){
+	.article-body-image-wrapper {
+		height: auto;
+		min-height: auto;
+		width: calc(100% + 30px);
+		transform: translateX(-15px);
+	}
+	.article-body-image-wrapper img {
+		position: relative;
+		height: auto;
+		width: 100%;
+		right: 0;
+	}
+	.article-body-image-descriprion {
+		margin-top: 0;
+		margin-left: 15px;
+	}
+}
+
+.category-left {
+	position: absolute;
+	left: 0;
+	top: 100px;
+	height: 27px;
+	width: -webkit-calc(-webkit-calc(100% - 1140px)/2);
+	width: -moz-calc(-moz-calc(100% - 1140px)/2);
+	width: calc(calc(100% - 1140px)/2);
+}
 @media (max-width: 1200px){
 	.category-left {
 		width: -webkit-calc(-webkit-calc(100% - 960px)/2);
@@ -2155,22 +2175,6 @@ a {
 @media (max-width: 576px){
 	.category-left {
 		width: 15px;
-	}
-	.article-body-image-wrapper {
-		height: auto;
-		min-height: auto;
-		width: calc(100% + 30px);
-		transform: translateX(-15px);
-	}
-	.article-body-image-wrapper img {
-		position: relative;
-		height: auto;
-		width: 100%;
-		right: 0;
-	}
-	.article-body-image-descriprion {
-		margin-top: 0;
-		margin-left: 15px;
 	}
 }
 /* ********** Конец Статьи ********** */

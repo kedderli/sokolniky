@@ -100,105 +100,105 @@ $( document ).ready(function () {
 			})
 		})
 
-			// скролл по якорям
-			$("a.scroll-to").on("click", function(e){
-				const anchor = '#' + $(this).attr('href').split('#')[1];
-				e.preventDefault()
-				$('html, body').stop().animate({
-					scrollTop: $(anchor).offset().top
-				}, 400)	
-			})
+		// скролл по якорям
+		$("a.scroll-to").on("click", function(e){
+			const anchor = '#' + $(this).attr('href').split('#')[1];
+			e.preventDefault()
+			$('html, body').stop().animate({
+				scrollTop: $(anchor).offset().top
+			}, 400)	
+		})
 
 
 		//Инициализация слайдера историй
 
 		$('#story-section .section-card-list').slick({
-					dots: false,
-					infinite: false,
+			dots: false,
+			infinite: false,
+			arrows: true,
+			draggable: false,
+			swipe: false,
+			appendArrows: $('#story-section .section-head-wrapper'),
+			prevArrow: '<button type = "button" class = "section-slider-prev"><img src="assets/image/icons/prev.png"></button>',
+			nextArrow: '<button type = "button" class = "section-slider-next"><img src="assets/image/icons/next.png"></button>',
+			speed: 300,
+			slidesToShow: 3,
+			slidesToScroll: 3,	
+			responsive: [
+				{
+					breakpoint: 1200,
 					arrows: true,
-					draggable: false,
-					swipe: false,
-					appendArrows: $('#story-section .section-head-wrapper'),
-					prevArrow: '<button type = "button" class = "section-slider-prev"><img src="assets/image/icons/prev.png"></button>',
-					nextArrow: '<button type = "button" class = "section-slider-next"><img src="assets/image/icons/next.png"></button>',
-					speed: 300,
-					slidesToShow: 3,
-					slidesToScroll: 3,	
-					responsive: [
-						{
-							breakpoint: 1200,
-							arrows: true,
-							settings: {
-								slidesToShow: 2,
-								slidesToScroll: 1,
-							}
-						},
-						{
-							breakpoint: 768,
-							arrows: true,
-							settings: {
-								slidesToShow: 1,
-								slidesToScroll: 1,
-							}
-						}
-					]
-				});
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1,
+					}
+				},
+				{
+					breakpoint: 768,
+					arrows: true,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+					}
+				}
+			]
+		});
 
 		//Инициализация слайдера контекста
 
 		$('#context-section .section-card-list').slick({
-					dots: false,
-					infinite: false,
-					arrows: true,
-					draggable: false,
-					swipe: false,
-					appendArrows: $('#context-section .section-head-wrapper'),
-					prevArrow: '<button type = "button" class = "section-slider-prev"><img src="assets/image/icons/prev.png"></button>',
-					nextArrow: '<button type = "button" class = "section-slider-next"><img src="assets/image/icons/next.png"></button>',
-					speed: 300,
-					slidesToShow: 3,
-					slidesToScroll: 3,	
-					responsive: [
-						{
-							breakpoint: 1200,
-							settings: {
-								slidesToShow: 2,
-								slidesToScroll: 1,
-							}
-						},
-						{
-							breakpoint: 768,
-							settings: {
-								slidesToShow: 1,
-								slidesToScroll: 1,
-							}
-						}
-					]
-				});
+			dots: false,
+			infinite: false,
+			arrows: true,
+			draggable: false,
+			swipe: false,
+			appendArrows: $('#context-section .section-head-wrapper'),
+			prevArrow: '<button type = "button" class = "section-slider-prev"><img src="assets/image/icons/prev.png"></button>',
+			nextArrow: '<button type = "button" class = "section-slider-next"><img src="assets/image/icons/next.png"></button>',
+			speed: 300,
+			slidesToShow: 3,
+			slidesToScroll: 3,	
+			responsive: [
+				{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1,
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+					}
+				}
+			]
+		});
 
 		//Интерактивная карта 
 		const mapSlider = $('.map-card-list').slick({
-					dots: true,
-					infinite: false,
-					arrows: false,
-					draggable: false,
-					swipe: false,
-					adaptiveHeight: true,
-					fade: true,
-					speed: 500,
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					appendArrows: $('.map-arrows-wrapper'),
-					prevArrow: '<button type = "button" class = "map-prev"><img src="assets/image/icons/prev.png"></button>',
-					nextArrow: '<button type = "button" class = "map-next"><img src="assets/image/icons/next.png"></button>',
-					responsive: [
-						{
-							breakpoint: 1200,
-							settings: {
-								arrows: true,
-							}
-						}]
-				});
+			dots: true,
+			infinite: false,
+			arrows: false,
+			draggable: false,
+			swipe: false,
+			adaptiveHeight: true,
+			fade: true,
+			speed: 500,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			appendArrows: $('.map-arrows-wrapper'),
+			prevArrow: '<button type = "button" class = "map-prev"><img src="assets/image/icons/prev.png"></button>',
+			nextArrow: '<button type = "button" class = "map-next"><img src="assets/image/icons/next.png"></button>',
+			responsive: [
+				{
+					breakpoint: 1200,
+					settings: {
+						arrows: true,
+					}
+				}]
+		});
 
 		const mapSliderDots = document.querySelectorAll('.map-card-list .slick-dots li')
 		circleActicve = 0
@@ -305,64 +305,64 @@ $( document ).ready(function () {
 	if (document.location.pathname === '/sokolniky/' || document.location.pathname === '/sokolniky/photogallery.html') {
 		// Инициализация слайдера фото
 		const fotoPostSlider = $('.foto-slider-list').slick({
-					dots: true,
-					infinite: false,
-					arrows: false,
-					speed: 700,
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					draggable: false,
-					swipe: false,
-					adaptiveHeight: true
-				});
+			dots: true,
+			infinite: false,
+			arrows: false,
+			speed: 700,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			draggable: false,
+			swipe: false,
+			adaptiveHeight: true
+		});
 
 		const fotoSlider = $('.foto-tab-list').slick({
-					dots: false,
-					infinite: false,
-					speed: 700,
-					slidesToShow: 11,
-					slidesToScroll: 11,
-					prevArrow: '<button type = "button" class = "slick-prev-a" id="foto-tab-prev"><img src="assets/image/icons/prev.png"></button>',
-					nextArrow: '<button type = "button" class = "slick-next-a" id="foto-tab-next"><img src="assets/image/icons/next.png"></button>',
-					arrows: true,
-					responsive: [
-						{
-							breakpoint: 1200,
-							settings: {
-								slidesToShow: 7,
-								slidesToScroll: 7,
-							}
-						},
-						{
-							breakpoint: 992,
-							settings: {
-								slidesToShow: 6,
-								slidesToScroll: 6,
-							}
-						},
-						{
-							breakpoint: 768,
-							settings: {
-								slidesToShow: 4,
-								slidesToScroll: 4,
-							}
-						},
-						{
-							breakpoint: 576,
-							settings: {
-								slidesToShow: 2,
-								slidesToScroll: 2,
-							}
-						},
-						{
-							breakpoint: 390,
-							settings: {
-								slidesToShow: 1,
-								slidesToScroll: 1,
-							}
-						}
-					]
-				});
+			dots: false,
+			infinite: false,
+			speed: 700,
+			slidesToShow: 11,
+			slidesToScroll: 11,
+			prevArrow: '<button type = "button" class = "slick-prev-a" id="foto-tab-prev"><img src="assets/image/icons/prev.png"></button>',
+			nextArrow: '<button type = "button" class = "slick-next-a" id="foto-tab-next"><img src="assets/image/icons/next.png"></button>',
+			arrows: true,
+			responsive: [
+				{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 7,
+						slidesToScroll: 7,
+					}
+				},
+				{
+					breakpoint: 992,
+					settings: {
+						slidesToShow: 6,
+						slidesToScroll: 6,
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 4,
+						slidesToScroll: 4,
+					}
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2,
+					}
+				},
+				{
+					breakpoint: 390,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+					}
+				}
+			]
+		});
 
 		const dotsTrue = document.querySelectorAll('.slick-dots li')
 		const dotsFalse = document.querySelectorAll('.foto-tab-item')
@@ -379,7 +379,7 @@ $( document ).ready(function () {
 				dotsTrue[this].click()
 				setTimeout(function () {
 					tabChangeNow = false
-				}, 650)
+				}, 700)
 			}
 		}
 
@@ -390,11 +390,18 @@ $( document ).ready(function () {
 		const fotoTabPrev = document.querySelector('#foto-tab-prev')
 		const fotoTabNext = document.querySelector('#foto-tab-next')
 
-		fotoTabPrev.addEventListener('click', function() {
-			fotoPostSlider.slick('slickPrev')
-		})
-		fotoTabNext.addEventListener('click', function() {
-			fotoPostSlider.slick('slickNext')
+		fotoSlider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+			if (document.documentElement.clientWidth <= 390) {
+				if (!tabChangeNow) {
+					tabChangeNow = true
+					dotsFalse[currentSlide].classList.toggle('tab-active')
+					dotsFalse[nextSlide].classList.toggle('tab-active')
+					dotsTrue[nextSlide].click()
+					setTimeout(function () {
+						tabChangeNow = false
+					}, 700)
+				}
+			}
 		})
 	}
 
