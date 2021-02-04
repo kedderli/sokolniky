@@ -2364,6 +2364,9 @@ a {
 	left: 40%;
 	transform: translateX(-50%);
 }
+.page-card-list .section-card-item {
+	height: 100%;
+}
 @media (max-width: 1200px){
 	.page-card-list {
 		justify-content: center;
