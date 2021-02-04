@@ -43,7 +43,6 @@ $( document ).ready(function () {
 
 			$(window).on('scroll', function () {
 				const position = $(this).scrollTop();
-				console.log(1)
 				section.each(function () {
 					const top = $(this).offset().top - 5,
 						  bottom = top + $(this).outerHeight()
@@ -69,7 +68,7 @@ $( document ).ready(function () {
 		if (fotoCardMaxHeight2 < 266) {
 			fotoCardMaxHeight2 = 266
 		}
-		console.log(fotoCardAll2)
+
 		fotoCardAll2.forEach(function (item) {
 			item.style.height = fotoCardMaxHeight2 + 'px'
 		})
@@ -384,7 +383,7 @@ $( document ).ready(function () {
 			}
 		}
 
-		for (let i = 0; i < dotsTrue.length; i++) {
+		for (let i = 0; i < dotsFalse.length; i++) {
 			dotsFalse[i].addEventListener('click', changeSlideFoto.bind(i))
 		}
 
