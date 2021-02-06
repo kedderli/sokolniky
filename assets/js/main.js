@@ -31,7 +31,7 @@ $( document ).ready(function () {
 		}
 
 	//запускается только на главной 
-	if (document.location.pathname === '/sokolniky/') {
+	if (document.location.pathname === '/' || document.location.pathname === '/index.php' || document.location.pathname === '/index.html') {
 
 		//Подсветка пунктов меню
 		$(function($) {
@@ -50,7 +50,7 @@ $( document ).ready(function () {
 						nav.find('a').removeClass('active')
 						section.removeClass('active')
 						$(this).addClass('active')
-						nav.find('a[href="/sokolniky/#' + $(this).attr('id') + '"]').addClass('active')
+						nav.find('a[href="/#' + $(this).attr('id') + '"]').addClass('active')
 					}
 				})
 			})
@@ -301,8 +301,8 @@ $( document ).ready(function () {
 				});
 	}
 
-	// Вкладки фотогалереи 
-	if (document.location.pathname === '/sokolniky/' || document.location.pathname === '/sokolniky/photogallery.html') {
+	// Вкладки фотогалереи document.location.pathname === '/' || document.location.pathname === '/index.php' document.location.pathname === '/index.html' || document.location.pathname === '/photogallery.html'
+	if (true) {
 		// Инициализация слайдера фото
 		const fotoPostSlider = $('.foto-slider-list').slick({
 			dots: true,
@@ -405,8 +405,8 @@ $( document ).ready(function () {
 		})
 	}
 
-	// Фотогалерея 
-	if (document.location.pathname === '/sokolniky/photogallery.html') {
+	// Фотогалерея document.location.pathname === '/photogallery.html'
+	if (true) {
 		const photogallerySlide = document.querySelector('#photogallery-slide')
 		const photogallerySlideContent = document.querySelector('#photogallery-slide-content')
 		const photogalleryClose = document.querySelector('#photogallery-slide-close')
@@ -418,6 +418,7 @@ $( document ).ready(function () {
 			document.querySelector('html').classList.add('overflowy')
 			document.querySelector('body').classList.add('overflowy')
 			photogallerySlideContent.innerHTML = this.innerHTML
+			photogallerySlideContent.querySelector('img').setAttribute('src', photogallerySlideContent.querySelector('img').getAttribute('data-src'))
 			setTimeout(function() {
 				photogallerySlide.classList.add('active')
 			}, 1)
