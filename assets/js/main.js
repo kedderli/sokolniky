@@ -314,7 +314,6 @@ $( document ).ready(function () {
 			draggable: false,
 			swipe: false,
 			adaptiveHeight: true,
-			LazyLoad: 'ondemand',
 		});
 
 		const fotoSlider = $('.foto-tab-list').slick({
