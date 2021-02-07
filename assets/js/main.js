@@ -301,8 +301,8 @@ $( document ).ready(function () {
 				});
 	}
 
-	// Вкладки фотогалереи document.location.pathname === '/' || document.location.pathname === '/index.php' document.location.pathname === '/index.html' || document.location.pathname === '/photogallery.html'
-	if (true) {
+	// Вкладки фотогалереи 
+	if (document.location.pathname === '/' || document.location.pathname === '/index.php' document.location.pathname === '/index.html' || document.location.pathname === '/photogallery.html') {
 		// Инициализация слайдера фото
 		const fotoPostSlider = $('.foto-slider-list').slick({
 			dots: true,
@@ -405,23 +405,45 @@ $( document ).ready(function () {
 		})
 	}
 
-	// Фотогалерея document.location.pathname === '/photogallery.html'
-	if (true) {
+	// Фотогалерея 
+	if (document.location.pathname === '/photogallery.html') {
 		const photogallerySlide = document.querySelector('#photogallery-slide')
 		const photogallerySlideContent = document.querySelector('#photogallery-slide-content')
 		const photogalleryClose = document.querySelector('#photogallery-slide-close')
 		const photogalleryBG = document.querySelector('#photogallery-slide-bg')
-		const photogalleryList = document.querySelectorAll('.photogallery-item-image')
+		const photogalleryTabList = document.querySelectorAll('.foto-slider-item-wrapper')
+		const fotoSlidePrev = document.querySelector('#foto-slide-prev')
+		const fotoSlideNext = document.querySelector('#foto-slide-next')
+		let activeFoto = 0
+		let activeFotoTab = 0
+		let photogalleryList = []
+		for (let i=0; i<photogalleryTabList.length; i++) {
+			photogalleryList.push(photogalleryTabList[i].querySelectorAll('.photogallery-item-image'))
+		}
 
 		const openPhotogallerySlide = function () {
+			activeFoto = this[0]
+			activeFotoTab = this[1]
 			photogallerySlide.style.display = 'block'
 			document.querySelector('html').classList.add('overflowy')
 			document.querySelector('body').classList.add('overflowy')
-			photogallerySlideContent.innerHTML = this.innerHTML
+			photogallerySlideContent.innerHTML = photogalleryList[this[1]][this[0]].innerHTML
 			photogallerySlideContent.querySelector('img').setAttribute('src', photogallerySlideContent.querySelector('img').getAttribute('data-src'))
 			setTimeout(function() {
 				photogallerySlide.classList.add('active')
 			}, 1)
+		}
+
+		const switchPhotogallerySlide = function () {
+			if (photogalleryList[activeFotoTab].length === activeFoto + this) {
+				activeFoto = 0
+			} else if (activeFoto + this === -1) {
+				activeFoto = photogalleryList[activeFotoTab].length - 1
+			} else {
+				activeFoto = activeFoto + this
+			}
+			photogallerySlideContent.innerHTML = photogalleryList[activeFotoTab][activeFoto].innerHTML
+			photogallerySlideContent.querySelector('img').setAttribute('src', photogallerySlideContent.querySelector('img').getAttribute('data-src'))
 		}
 
 		const closePhotogallerySlide = function () {
@@ -433,9 +455,15 @@ $( document ).ready(function () {
 			}, 400)
 		}
 
-		for (let i = 0; i < photogalleryList.length; i++) {
-			photogalleryList[i].addEventListener('click', openPhotogallerySlide.bind(photogalleryList[i]))
+		for (let j = 0; j < photogalleryTabList.length; j++) {
+			if (photogalleryList.length > 0) {
+				for (let i = 0; i < photogalleryList[j].length; i++) {
+					photogalleryList[j][i].addEventListener('click', openPhotogallerySlide.bind([i, j]))
+				}
+			}
 		}
+		fotoSlidePrev.addEventListener('click', switchPhotogallerySlide.bind(-1))
+		fotoSlideNext.addEventListener('click', switchPhotogallerySlide.bind(1))
 
 		photogalleryClose.addEventListener('click', closePhotogallerySlide)
 		photogalleryBG.addEventListener('click', closePhotogallerySlide)
